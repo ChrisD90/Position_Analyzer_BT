@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 public class Window_Main extends JFrame{
 
 	public Window_Main() {
-		setSize(100, 100);
+		setSize(800, 600);
 		setVisible(true);
 	}
 }
