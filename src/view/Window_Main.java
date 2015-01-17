@@ -11,12 +11,12 @@ import javax.swing.JFrame;
 import control.FileChooser;
 
 @SuppressWarnings("serial")
-public class Window_Main extends JFrame{
+public class Window_Main extends JFrame {
 
 	JButton openFile;
-	
+
 	public Window_Main() {
-	
+
 		int windowX = 800;
 		int windowY = 600;
 		final Dimension d = this.getToolkit().getScreenSize();
@@ -27,19 +27,24 @@ public class Window_Main extends JFrame{
 
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		getContentPane().setLayout(new BorderLayout());
+
+		initButtons();
 		
+		this.add(openFile, BorderLayout.SOUTH);
+
+		setVisible(true);
+	}
+	
+	private void initButtons() {
 		openFile = new JButton("open PDF");
 		openFile.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				@SuppressWarnings("unused")
 				FileChooser fc = new FileChooser();
-				
+
 			}
 		});
-		this.add(openFile);
-		
-		setVisible(true);
 	}
 }
