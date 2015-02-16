@@ -1,14 +1,15 @@
 package main;
 
-import view.Window_Main;
+import view.Main_Window;
+
 
 public class Main {
 
 	public static void main(String[] args) {
 		System.out.println("TEST");
 		@SuppressWarnings("unused")
-		Window_Main wm = new Window_Main();
-		
+		Main_Window wm = new Main_Window();
+		wm.setVisible(true);
 	}
 
 }
