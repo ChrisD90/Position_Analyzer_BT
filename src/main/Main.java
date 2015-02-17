@@ -1,5 +1,6 @@
 package main;
 
+import model.Player;
 import view.Main_Window;
 
 
@@ -9,7 +10,7 @@ public class Main {
 		System.out.println("TEST");
 		@SuppressWarnings("unused")
 		Main_Window wm = new Main_Window();
-		wm.setVisible(true);
+		wm.setVisible(true);	
 	}
 
 }
