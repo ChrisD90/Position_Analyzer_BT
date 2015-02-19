@@ -12,5 +12,4 @@ public class Main {
 		Main_Window wm = new Main_Window();
 		wm.setVisible(true);	
 	}
-
 }

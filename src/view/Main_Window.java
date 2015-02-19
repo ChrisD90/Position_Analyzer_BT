@@ -232,6 +232,10 @@ public class Main_Window extends JFrame {
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				Dialog_Window dialog = new Dialog_Window();
+				dialog.setVisible(true);
+				
 				System.out.println("Calculating Optimal Position");
 				
 				values[0] = Integer.parseInt(spinner.getValue().toString());
