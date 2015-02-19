@@ -2,6 +2,7 @@ package control;
 
 public class Calculator {
 
+	//contains players values
 	int[] values;
 	
 	public Calculator(int[] values) {

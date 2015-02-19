@@ -6,7 +6,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
-
 import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
@@ -20,9 +19,12 @@ import java.awt.event.ActionEvent;
 import javax.swing.JDesktopPane;
 
 import model.Player;
+
 import javax.swing.SwingConstants;
+
 import java.awt.Toolkit;
 import java.awt.SystemColor;
+
 import javax.swing.JSeparator;
 
 public class Main_Window extends JFrame {
@@ -267,13 +269,14 @@ public class Main_Window extends JFrame {
 		});
 
 		// ####################BUTTONS####################
-
+		
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				
 				Dialog_Window dialog = new Dialog_Window();
 				dialog.setVisible(true);
+								
 
 				System.out.println("Calculating Optimal Position");
 
