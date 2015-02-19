@@ -21,6 +21,9 @@ import javax.swing.JDesktopPane;
 
 import model.Player;
 import javax.swing.SwingConstants;
+import java.awt.Toolkit;
+import java.awt.SystemColor;
+import javax.swing.JSeparator;
 
 public class Main_Window extends JFrame {
 
@@ -50,9 +53,13 @@ public class Main_Window extends JFrame {
 	 * Create the frame.
 	 */
 	public Main_Window() {
+		setBackground(SystemColor.window);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(
+				Main_Window.class.getResource("/media/player.jpg")));
 		setTitle("Position_Analyzer");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 		setBounds(100, 100, 800, 600);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -60,10 +67,9 @@ public class Main_Window extends JFrame {
 		contentPane.setLayout(null);
 
 		JDesktopPane desktopPane = new JDesktopPane();
+		desktopPane.setBackground(Color.LIGHT_GRAY);
 		desktopPane.setBounds(350, 30, 434, 420);
 		contentPane.add(desktopPane);
-		
-		
 
 		// ####################SPINNER####################
 
@@ -220,24 +226,57 @@ public class Main_Window extends JFrame {
 
 		JMenuItem mntmClose = new JMenuItem("Close");
 		mnFile.add(mntmClose);
+		mntmClose.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+
+			}
+		});
 
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
-
-		JMenu mnAbout = new JMenu("About");
-		menuBar.add(mnAbout);
+		
+		JMenuItem mntmCheatSheet = new JMenuItem("Cheat Sheet");
+		mnHelp.add(mntmCheatSheet);
+		
+		JSeparator separator = new JSeparator();
+		mnHelp.add(separator);
+		
+		JMenuItem mntmAbout = new JMenuItem("About");
+		mnHelp.add(mntmAbout);
+		mntmAbout.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				About_Window aw = new About_Window();
+				aw.setVisible(true);
+				
+			}
+		});
+		
+		mntmCheatSheet.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Help_Window hw = new Help_Window();
+				hw.setVisible(true);
+				
+			}
+		});
 
 		// ####################BUTTONS####################
 
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+
 				Dialog_Window dialog = new Dialog_Window();
 				dialog.setVisible(true);
-				
+
 				System.out.println("Calculating Optimal Position");
-				
+
 				values[0] = Integer.parseInt(spinner.getValue().toString());
 				values[1] = Integer.parseInt(spinner_1.getValue().toString());
 				values[2] = Integer.parseInt(spinner_2.getValue().toString());
@@ -257,15 +296,19 @@ public class Main_Window extends JFrame {
 				values[16] = Integer.parseInt(spinner_16.getValue().toString());
 
 				player = new Player(values);
-				//player.printValues(values);
+				// player.printValues(values);
 				player.calcPos();
-				
+
+				// String inhabits the calculated Positions
+				String string = player.positions;
+
 				desktopPane.setBackground(Color.GREEN);
-				JLabel lblNewLabel = new JLabel("Perfect Position(s) for Player: " + player.positions);
+				JLabel lblNewLabel = new JLabel(
+						"Perfect Position(s) for Player: " + string);
 				lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 				lblNewLabel.setBounds(141, 142, 200, 97);
 				desktopPane.add(lblNewLabel);
-				
+
 			}
 		});
 

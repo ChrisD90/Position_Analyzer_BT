@@ -15,6 +15,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
+import java.awt.Toolkit;
 
 public class Dialog_Window extends JDialog {
 
@@ -22,11 +23,12 @@ public class Dialog_Window extends JDialog {
 	 * Create the dialog.
 	 */
 	public Dialog_Window() {
-		setBounds(100, 100, 450, 300);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Dialog_Window.class.getResource("/media/player.jpg")));
+		setBounds(450, 200,450, 300);
 		getContentPane().setLayout(null);
 		{
 			JButton okButton = new JButton("OK");
-			okButton.setBounds(15, 186, 106, 42);
+			okButton.setBounds(15, 208, 106, 42);
 			getContentPane().add(okButton);
 			okButton.setActionCommand("OK");
 			getRootPane().setDefaultButton(okButton);
@@ -46,10 +48,5 @@ public class Dialog_Window extends JDialog {
 		lblPositionWirdAuf.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPositionWirdAuf.setBounds(15, 68, 398, 56);
 		getContentPane().add(lblPositionWirdAuf);
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(Dialog_Window.class.getResource("/media/player.jpg")));
-		lblNewLabel.setBounds(0, 0, 428, 244);
-		getContentPane().add(lblNewLabel);
 	}
 }
