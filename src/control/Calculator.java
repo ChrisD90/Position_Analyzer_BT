@@ -16,6 +16,7 @@ public class Calculator {
 		//DO CALCULATIONS AND APPEND POSSIBLE POSITIONS tO string SUCH AS: MF, ZM, ST
 		string = "MF";
 		
+		
 		return string;
 	}
 }

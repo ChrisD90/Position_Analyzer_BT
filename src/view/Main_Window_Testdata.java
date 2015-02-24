@@ -27,7 +27,7 @@ import java.awt.SystemColor;
 
 import javax.swing.JSeparator;
 
-public class Main_Window extends JFrame {
+public class Main_Window_Testdata extends JFrame {
 
 	private JPanel contentPane;
 	public int[] values = new int[17];
@@ -54,10 +54,10 @@ public class Main_Window extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Main_Window() {
+	public Main_Window_Testdata() {
 		setBackground(SystemColor.window);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				Main_Window.class.getResource("/media/player.jpg")));
+				Main_Window_Testdata.class.getResource("/media/player.jpg")));
 		setTitle("Position_Analyzer");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
