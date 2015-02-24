@@ -4,7 +4,7 @@ public class PDFreader {
 
 	String path;
 
-	public void PDFreader(String dataPath) {
+	public PDFreader(String dataPath) {
 		path = dataPath;
 	}
 	
