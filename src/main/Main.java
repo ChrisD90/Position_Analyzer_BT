@@ -1,7 +1,5 @@
 package main;
 
-import model.Player;
-import view.Main_Window_Testdata;
 import view.Start_Window;
 
 

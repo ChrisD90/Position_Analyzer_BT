@@ -22,18 +22,18 @@ import javax.swing.JProgressBar;
 
 import java.awt.Color;
 
-public class Dialog_Window extends JDialog {
+public class Progress_Bar_Window extends JDialog {
 
 	JProgressBar progressBar;
 
 	/**
 	 * Create the dialog.
 	 */
-	public Dialog_Window() {
+	public Progress_Bar_Window() {
 		setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
 		setAlwaysOnTop(true);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				Dialog_Window.class.getResource("/media/player.jpg")));
+				Progress_Bar_Window.class.getResource("/media/player.jpg")));
 		setBounds(450, 200, 450, 300);
 		getContentPane().setLayout(null);
 

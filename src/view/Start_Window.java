@@ -13,10 +13,14 @@ import javax.swing.JButton;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.ButtonGroup;
+
+import control.FileChooser;
 
 public class Start_Window extends JFrame {
 
 	private JPanel contentPane;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
 	 * Create the frame.
@@ -32,10 +36,12 @@ public class Start_Window extends JFrame {
 		contentPane.setLayout(null);
 		
 		JRadioButton rdbtnTesdaten = new JRadioButton("Analyse auf Grund von Tesdaten");
+		buttonGroup.add(rdbtnTesdaten);
 		rdbtnTesdaten.setBounds(11, 79, 372, 29);
 		contentPane.add(rdbtnTesdaten);
 		
 		JRadioButton rdbtnAnalyseAufGrund_1 = new JRadioButton("Analyse auf Grund von Spielbeobachtungsdaten");
+		buttonGroup.add(rdbtnAnalyseAufGrund_1);
 		rdbtnAnalyseAufGrund_1.setBounds(11, 131, 372, 29);
 		contentPane.add(rdbtnAnalyseAufGrund_1);
 		
@@ -55,6 +61,13 @@ public class Start_Window extends JFrame {
 		
 		JMenuItem mntmClose = new JMenuItem("Close");
 		mnData.add(mntmClose);
+		initActions(rdbtnTesdaten, rdbtnAnalyseAufGrund_1, btnOk, mntmClose);
+		
+	}
+
+	private void initActions(JRadioButton rdbtnTesdaten,
+			JRadioButton rdbtnAnalyseAufGrund_1, JButton btnOk,
+			JMenuItem mntmClose) {
 		mntmClose.addActionListener(new ActionListener() {
 			
 			@Override
@@ -72,11 +85,13 @@ public class Start_Window extends JFrame {
 					mw.setVisible(true);
 					dispose();
 				} else if(rdbtnAnalyseAufGrund_1.isSelected()) {
-					//TO-DO
+					FileChooser fc = new FileChooser();
+					Main_Window_Spielbeobachtung mws = new Main_Window_Spielbeobachtung(fc.dataPath());
+					mws.setVisible(true);
+					dispose();
 				}
 				
 			}
 		});
-		
 	}
 }

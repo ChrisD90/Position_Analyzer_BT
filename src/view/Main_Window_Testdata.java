@@ -274,7 +274,7 @@ public class Main_Window_Testdata extends JFrame {
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				Dialog_Window dialog = new Dialog_Window();
+				Progress_Bar_Window dialog = new Progress_Bar_Window();
 				dialog.setVisible(true);
 								
 
