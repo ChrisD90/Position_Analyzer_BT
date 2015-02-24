@@ -315,8 +315,21 @@ public class Main_Window_Testdata extends JFrame {
 			}
 		});
 
-		btnSubmit.setBounds(678, 523, 106, 37);
+		btnSubmit.setBounds(673, 507, 106, 37);
 		contentPane.add(btnSubmit);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.setBounds(15, 515, 115, 29);
+		contentPane.add(btnBack);
+		btnBack.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				Start_Window sw = new Start_Window();
+				sw.setVisible(true);
+				dispose();
+			}
+		});
 	}
 
 	public int[] deliverValues() {

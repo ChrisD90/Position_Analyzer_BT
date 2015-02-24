@@ -85,8 +85,7 @@ public class Start_Window extends JFrame {
 					mw.setVisible(true);
 					dispose();
 				} else if(rdbtnAnalyseAufGrund_1.isSelected()) {
-					FileChooser fc = new FileChooser();
-					Main_Window_Spielbeobachtung mws = new Main_Window_Spielbeobachtung(fc.dataPath());
+					Main_Window_Spielbeobachtung mws = new Main_Window_Spielbeobachtung();
 					mws.setVisible(true);
 					dispose();
 				}
