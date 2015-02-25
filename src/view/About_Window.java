@@ -30,11 +30,11 @@ public class About_Window extends JDialog {
 		setTitle("About...");
 		setResizable(false);
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 530, 300);
 		getContentPane().setLayout(null);
 		{
 			JButton btnClose = new JButton("Close");
-			btnClose.setBounds(345, 237, 89, 23);
+			btnClose.setBounds(425, 237, 89, 23);
 			getContentPane().add(btnClose);
 			btnClose.addActionListener(new ActionListener() {
 				
@@ -47,8 +47,8 @@ public class About_Window extends JDialog {
 		{
 			TextArea textArea = new TextArea();
 			textArea.setFont(new Font("Arial", Font.BOLD, 13));
-			textArea.setText("\"Requirement profile according to playing \r\nposition in Soccer - Analysis based on test \r\ndata and game observation data\"\r\n\r\nThis project was created by\r\nNicolas Bayer & Christoph Doeringer\r\nTU Darmstadt, 2015\r\n\r\nAll pictures are their owners purpose!\r\n\r\nThis software was created with Eclipse \r\nLunar - downloadable via \r\nhttps://eclipse.org/.\r\n\r\n");
-			textArea.setBounds(102, 0, 342, 231);
+			textArea.setText("\"Requirement profile according to playing position in Soccer - \r\nAnalysis based on test data and game observation data\"\r\n\r\nThis project was created by\r\nNicolas Bayer & Christoph Doeringer\r\nTU Darmstadt, 2015\r\n\r\n\r\nAll pictures are their owners purpose!\r\nData was provided by Instat - http://www.instatfootball.com/\r\n\r\nThis software was created with Eclipse Lunar - \r\ndownloadable via https://eclipse.org/");
+			textArea.setBounds(102, 0, 422, 231);
 			getContentPane().add(textArea);
 		}
 		{
