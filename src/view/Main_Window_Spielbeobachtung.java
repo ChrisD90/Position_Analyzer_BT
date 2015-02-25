@@ -24,6 +24,7 @@ public class Main_Window_Spielbeobachtung extends JFrame {
 	 * Create the frame.
 	 */
 	public Main_Window_Spielbeobachtung() {
+		setTitle("Analyse auf Grundlage von Spielbeobachtungsdaten...");
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);

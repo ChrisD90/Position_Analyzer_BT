@@ -16,14 +16,9 @@ import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-import javax.swing.JDesktopPane;
-
 import model.Player;
 
-import javax.swing.SwingConstants;
-
 import java.awt.Toolkit;
-import java.awt.SystemColor;
 
 import javax.swing.JSeparator;
 import java.awt.Font;
@@ -34,21 +29,64 @@ import javax.swing.ButtonGroup;
 
 public class Main_Window_Testdata extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	//GENERAL STUFF
 	private JPanel contentPane;
-	public int[] values = new int[17];
-	private JSpinner spinner;
-
+	public int[] values = new int[20];
+	
 	Player player;
+	
+	//SPINNER
+	private JSpinner spinner;
+	private JSpinner spinner_1;
+	private JSpinner spinner_2;
+	private JSpinner spinner_3;
+	private JSpinner spinner_4;
+	private JSpinner spinner_5;
+	private JSpinner spinner_6;
+	private JSpinner spinner_7;
+	private JSpinner spinner_8;
+	private JSpinner spinner_9;
+	private JSpinner spinner_10;
+	private JSpinner spinner_11;
+	private JSpinner spinner_12;
+	private JSpinner spinner_13;
+	private JSpinner spinner_14;
+	private JSpinner spinner_15;
+	private JSpinner spinner_16;
+	private JSpinner spinner_17;
+	private JSpinner spinner_18;
+	
+	//MENU
+	private JMenuBar menuBar;
+	private JMenu mnFile;
+	private JMenuItem mntmClose;
+	private JMenu mnHelp;
+	private JMenuItem mntmCheatSheet;
+	private JSeparator separator;
+	private JMenuItem mntmAbout;
+	
+	//DIVERSE BUTTONS
 	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private JButton btnSubmit;
+	private JButton btnBack;
+	private JRadioButton rdbtnEherLinks;
+	private JRadioButton rdbtnEherRechts;
+	private JRadioButton rdbtnBeidfig;
+	
 
 	/**
 	 * Create the frame.
 	 */
 	public Main_Window_Testdata() {
-		setBackground(SystemColor.window);
+		setBackground(Color.WHITE);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(
 				Main_Window_Testdata.class.getResource("/media/player.jpg")));
-		setTitle("Position_Analyzer");
+		setTitle("Analyse auf Grundlage von Testdaten...");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -58,52 +96,92 @@ public class Main_Window_Testdata extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblAusdauer = new JLabel("Yo-Yo Test (in m)");
-		lblAusdauer.setBounds(10, 60, 236, 14);
-		contentPane.add(lblAusdauer);
+		initMenu();
 
-		spinner = new JSpinner();
-		spinner.setBounds(256, 57, 53, 20);
-		contentPane.add(spinner);
+		initButtons();
+		
+		initLabels();
+		
+		initSpinners();
+		
+		initActionListeners(mntmClose, mntmCheatSheet, mntmAbout, btnSubmit,
+				btnBack);
+	}
 
-		JMenuBar menuBar = new JMenuBar();
+	/**
+	 * 
+	 */
+	private void initButtons() {
+		btnSubmit = new JButton("Submit");
+		btnSubmit.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnSubmit.setBounds(669, 511, 106, 37);
+		contentPane.add(btnSubmit);
+
+		btnBack = new JButton("Back");
+		btnBack.setBounds(15, 515, 115, 29);
+		contentPane.add(btnBack);
+		
+		rdbtnEherLinks = new JRadioButton("eher links");
+		buttonGroup.add(rdbtnEherLinks);
+		rdbtnEherLinks.setBounds(419, 397, 109, 23);
+		contentPane.add(rdbtnEherLinks);
+
+		rdbtnEherRechts = new JRadioButton("eher rechts");
+		buttonGroup.add(rdbtnEherRechts);
+		rdbtnEherRechts.setBounds(530, 397, 109, 23);
+		contentPane.add(rdbtnEherRechts);
+
+		rdbtnBeidfig = new JRadioButton("beidf\u00FC\u00DFig");
+		buttonGroup.add(rdbtnBeidfig);
+		rdbtnBeidfig.setBounds(641, 397, 109, 23);
+		contentPane.add(rdbtnBeidfig);
+	}
+
+	/**
+	 * 
+	 */
+	private void initMenu() {
+		menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 794, 21);
 		contentPane.add(menuBar);
 
-		JMenu mnFile = new JMenu("File");
+		mnFile = new JMenu("File");
 		menuBar.add(mnFile);
 
-		JMenuItem mntmClose = new JMenuItem("Close");
+		mntmClose = new JMenuItem("Close");
 		mnFile.add(mntmClose);
 
-		JMenu mnHelp = new JMenu("Help");
+		mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
 
-		JMenuItem mntmCheatSheet = new JMenuItem("Cheat Sheet");
+		mntmCheatSheet = new JMenuItem("Cheat Sheet");
 		mnHelp.add(mntmCheatSheet);
 
-		JSeparator separator = new JSeparator();
+		separator = new JSeparator();
 		mnHelp.add(separator);
 
-		JMenuItem mntmAbout = new JMenuItem("About");
+		mntmAbout = new JMenuItem("About");
 		mnHelp.add(mntmAbout);
+	}
 
-		JButton btnSubmit = new JButton("Submit");
-		btnSubmit.setBounds(673, 507, 106, 37);
-		contentPane.add(btnSubmit);
-
-		JButton btnBack = new JButton("Back");
-		btnBack.setBounds(15, 515, 115, 29);
-		contentPane.add(btnBack);
-
+	/**
+	 * 
+	 */
+	private void initLabels() {
+		JLabel lblAusdauer = new JLabel("Ergebnis - Yo-Yo Test (in m)");
+		lblAusdauer.setToolTipText("Der Yo-Yo Test zeigt nach Di Salvo et al. (2006) eine enge Korrelation \r\nzwischen der zur\u00FCckgelegten Distanz im Test und der Positionsrolle \r\ndes Spielers.");
+		lblAusdauer.setBounds(10, 60, 236, 14);
+		contentPane.add(lblAusdauer);
+		
 		JLabel lblAusdauerfhigkeiten = new JLabel("Ausdauerf\u00E4higkeiten");
-		lblAusdauerfhigkeiten.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblAusdauerfhigkeiten.setToolTipText("");
+		lblAusdauerfhigkeiten.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
 		lblAusdauerfhigkeiten.setBounds(10, 35, 236, 14);
 		contentPane.add(lblAusdauerfhigkeiten);
 
 		JLabel lblSchnelligkeitsfhigkeiten = new JLabel(
 				"Schnelligkeitsf\u00E4higkeiten");
-		lblSchnelligkeitsfhigkeiten.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblSchnelligkeitsfhigkeiten.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
 		lblSchnelligkeitsfhigkeiten.setBounds(10, 95, 299, 14);
 		contentPane.add(lblSchnelligkeitsfhigkeiten);
 
@@ -119,20 +197,8 @@ public class Main_Window_Testdata extends JFrame {
 		lblmZeit_1.setBounds(10, 170, 236, 14);
 		contentPane.add(lblmZeit_1);
 
-		JSpinner spinner_1 = new JSpinner();
-		spinner_1.setBounds(256, 117, 53, 20);
-		contentPane.add(spinner_1);
-
-		JSpinner spinner_2 = new JSpinner();
-		spinner_2.setBounds(256, 142, 53, 20);
-		contentPane.add(spinner_2);
-
-		JSpinner spinner_3 = new JSpinner();
-		spinner_3.setBounds(256, 167, 53, 20);
-		contentPane.add(spinner_3);
-
 		JLabel lblSprungkraft = new JLabel("Sprungkraft");
-		lblSprungkraft.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblSprungkraft.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
 		lblSprungkraft.setBounds(10, 205, 236, 14);
 		contentPane.add(lblSprungkraft);
 
@@ -140,12 +206,8 @@ public class Main_Window_Testdata extends JFrame {
 		lblErgebnisJump.setBounds(10, 230, 236, 14);
 		contentPane.add(lblErgebnisJump);
 
-		JSpinner spinner_4 = new JSpinner();
-		spinner_4.setBounds(256, 227, 53, 20);
-		contentPane.add(spinner_4);
-
 		JLabel lblPassspiel = new JLabel("Passspiel");
-		lblPassspiel.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblPassspiel.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
 		lblPassspiel.setBounds(10, 265, 236, 14);
 		contentPane.add(lblPassspiel);
 
@@ -166,24 +228,8 @@ public class Main_Window_Testdata extends JFrame {
 		lblLangePsseErfolgreich.setBounds(10, 365, 236, 14);
 		contentPane.add(lblLangePsseErfolgreich);
 
-		JSpinner spinner_5 = new JSpinner();
-		spinner_5.setBounds(256, 287, 53, 20);
-		contentPane.add(spinner_5);
-
-		JSpinner spinner_6 = new JSpinner();
-		spinner_6.setBounds(256, 312, 53, 20);
-		contentPane.add(spinner_6);
-
-		JSpinner spinner_7 = new JSpinner();
-		spinner_7.setBounds(256, 337, 53, 20);
-		contentPane.add(spinner_7);
-
-		JSpinner spinner_8 = new JSpinner();
-		spinner_8.setBounds(256, 362, 53, 20);
-		contentPane.add(spinner_8);
-
 		JLabel lblFlanken = new JLabel("Flanken");
-		lblFlanken.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblFlanken.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
 		lblFlanken.setBounds(10, 400, 236, 14);
 		contentPane.add(lblFlanken);
 
@@ -195,20 +241,12 @@ public class Main_Window_Testdata extends JFrame {
 		lblFlankenAngekommen.setBounds(10, 450, 236, 14);
 		contentPane.add(lblFlankenAngekommen);
 
-		JSpinner spinner_9 = new JSpinner();
-		spinner_9.setBounds(256, 422, 53, 20);
-		contentPane.add(spinner_9);
-
-		JSpinner spinner_10 = new JSpinner();
-		spinner_10.setBounds(256, 447, 53, 20);
-		contentPane.add(spinner_10);
-
 		Component verticalStrut = Box.createVerticalStrut(20);
 		verticalStrut.setBounds(401, 32, 12, 461);
 		contentPane.add(verticalStrut);
 
 		JLabel lblDribbling = new JLabel("Dribbling");
-		lblDribbling.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblDribbling.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
 		lblDribbling.setBounds(423, 36, 236, 14);
 		contentPane.add(lblDribbling);
 
@@ -224,20 +262,8 @@ public class Main_Window_Testdata extends JFrame {
 		lblmZeit_4.setBounds(423, 110, 236, 14);
 		contentPane.add(lblmZeit_4);
 
-		JSpinner spinner_11 = new JSpinner();
-		spinner_11.setBounds(669, 57, 53, 20);
-		contentPane.add(spinner_11);
-
-		JSpinner spinner_12 = new JSpinner();
-		spinner_12.setBounds(669, 82, 53, 20);
-		contentPane.add(spinner_12);
-
-		JSpinner spinner_13 = new JSpinner();
-		spinner_13.setBounds(669, 107, 53, 20);
-		contentPane.add(spinner_13);
-
 		JLabel lblTorschuss = new JLabel("Torschuss");
-		lblTorschuss.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblTorschuss.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
 		lblTorschuss.setBounds(423, 145, 236, 14);
 		contentPane.add(lblTorschuss);
 
@@ -250,16 +276,8 @@ public class Main_Window_Testdata extends JFrame {
 		lblSchsseAufsTor_1.setBounds(423, 195, 236, 14);
 		contentPane.add(lblSchsseAufsTor_1);
 
-		JSpinner spinner_14 = new JSpinner();
-		spinner_14.setBounds(673, 167, 49, 20);
-		contentPane.add(spinner_14);
-
-		JSpinner spinner_15 = new JSpinner();
-		spinner_15.setBounds(673, 192, 49, 20);
-		contentPane.add(spinner_15);
-
 		JLabel lblZweikampfverhalten = new JLabel("Zweikampfverhalten");
-		lblZweikampfverhalten.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblZweikampfverhalten.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
 		lblZweikampfverhalten.setBounds(423, 230, 236, 14);
 		contentPane.add(lblZweikampfverhalten);
 
@@ -273,16 +291,8 @@ public class Main_Window_Testdata extends JFrame {
 		lblDefensiveZweikmpfe.setBounds(423, 280, 236, 14);
 		contentPane.add(lblDefensiveZweikmpfe);
 
-		JSpinner spinner_16 = new JSpinner();
-		spinner_16.setBounds(673, 252, 49, 20);
-		contentPane.add(spinner_16);
-
-		JSpinner spinner_17 = new JSpinner();
-		spinner_17.setBounds(673, 277, 49, 20);
-		contentPane.add(spinner_17);
-
 		JLabel lblSpielverstndnis = new JLabel("Spielverst\u00E4ndnis");
-		lblSpielverstndnis.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblSpielverstndnis.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
 		lblSpielverstndnis.setBounds(423, 315, 237, 14);
 		contentPane.add(lblSpielverstndnis);
 
@@ -291,33 +301,93 @@ public class Main_Window_Testdata extends JFrame {
 		lblEinschtzungAlsSchulnote.setBounds(423, 340, 236, 14);
 		contentPane.add(lblEinschtzungAlsSchulnote);
 
-		JSpinner spinner_18 = new JSpinner();
+		JLabel lblFuarbeit = new JLabel("Fu\u00DFarbeit");
+		lblFuarbeit.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
+		lblFuarbeit.setBounds(423, 380, 236, 14);
+		contentPane.add(lblFuarbeit);
+	}
+
+	/**
+	 * 
+	 */
+	private void initSpinners() {
+		spinner = new JSpinner();
+		spinner.setBounds(256, 57, 53, 20);
+		contentPane.add(spinner);
+		
+		spinner_1 = new JSpinner();
+		spinner_1.setBounds(256, 117, 53, 20);
+		contentPane.add(spinner_1);
+
+		spinner_2 = new JSpinner();
+		spinner_2.setBounds(256, 142, 53, 20);
+		contentPane.add(spinner_2);
+
+		spinner_3 = new JSpinner();
+		spinner_3.setBounds(256, 167, 53, 20);
+		contentPane.add(spinner_3);
+		
+		
+		spinner_4 = new JSpinner();
+		spinner_4.setBounds(256, 227, 53, 20);
+		contentPane.add(spinner_4);
+		
+		spinner_5 = new JSpinner();
+		spinner_5.setBounds(256, 287, 53, 20);
+		contentPane.add(spinner_5);
+
+		spinner_6 = new JSpinner();
+		spinner_6.setBounds(256, 312, 53, 20);
+		contentPane.add(spinner_6);
+
+		spinner_7 = new JSpinner();
+		spinner_7.setBounds(256, 337, 53, 20);
+		contentPane.add(spinner_7);
+
+		spinner_8 = new JSpinner();
+		spinner_8.setBounds(256, 362, 53, 20);
+		contentPane.add(spinner_8);
+		
+		spinner_9 = new JSpinner();
+		spinner_9.setBounds(256, 422, 53, 20);
+		contentPane.add(spinner_9);
+
+		spinner_10 = new JSpinner();
+		spinner_10.setBounds(256, 447, 53, 20);
+		contentPane.add(spinner_10);
+		
+		spinner_11 = new JSpinner();
+		spinner_11.setBounds(669, 57, 53, 20);
+		contentPane.add(spinner_11);
+
+		spinner_12 = new JSpinner();
+		spinner_12.setBounds(669, 82, 53, 20);
+		contentPane.add(spinner_12);
+
+		spinner_13 = new JSpinner();
+		spinner_13.setBounds(669, 107, 53, 20);
+		contentPane.add(spinner_13);
+		
+		spinner_14 = new JSpinner();
+		spinner_14.setBounds(673, 167, 49, 20);
+		contentPane.add(spinner_14);
+
+		spinner_15 = new JSpinner();
+		spinner_15.setBounds(673, 192, 49, 20);
+		contentPane.add(spinner_15);
+		
+		spinner_16 = new JSpinner();
+		spinner_16.setBounds(673, 252, 49, 20);
+		contentPane.add(spinner_16);
+
+		spinner_17 = new JSpinner();
+		spinner_17.setBounds(673, 277, 49, 20);
+		contentPane.add(spinner_17);
+		
+		spinner_18 = new JSpinner();
 		spinner_18.setModel(new SpinnerNumberModel(1, 1, 6, 1));
 		spinner_18.setBounds(673, 337, 49, 20);
 		contentPane.add(spinner_18);
-
-		JLabel lblFuarbeit = new JLabel("Fu\u00DFarbeit");
-		lblFuarbeit.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblFuarbeit.setBounds(423, 380, 236, 14);
-		contentPane.add(lblFuarbeit);
-
-		JRadioButton rdbtnEherLinks = new JRadioButton("eher links");
-		buttonGroup.add(rdbtnEherLinks);
-		rdbtnEherLinks.setBounds(419, 397, 109, 23);
-		contentPane.add(rdbtnEherLinks);
-
-		JRadioButton rdbtnEherRechts = new JRadioButton("eher rechts");
-		buttonGroup.add(rdbtnEherRechts);
-		rdbtnEherRechts.setBounds(530, 397, 109, 23);
-		contentPane.add(rdbtnEherRechts);
-
-		JRadioButton rdbtnBeidfig = new JRadioButton("beidf\u00FC\u00DFig");
-		buttonGroup.add(rdbtnBeidfig);
-		rdbtnBeidfig.setBounds(641, 397, 109, 23);
-		contentPane.add(rdbtnBeidfig);
-
-		initActionListeners(mntmClose, mntmCheatSheet, mntmAbout, btnSubmit,
-				btnBack);
 	}
 
 	/**
