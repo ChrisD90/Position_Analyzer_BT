@@ -33,15 +33,15 @@ public class Main_Window_Testdata extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	//GENERAL STUFF
+
+	// GENERAL STUFF
 	private JPanel contentPane;
 	public int[] values = new int[20];
-	
+
 	Player player;
-	
-	//SPINNER
-	private JSpinner spinner;
+
+	// SPINNER
+	private JSpinner spinner_0;
 	private JSpinner spinner_1;
 	private JSpinner spinner_2;
 	private JSpinner spinner_3;
@@ -60,8 +60,8 @@ public class Main_Window_Testdata extends JFrame {
 	private JSpinner spinner_16;
 	private JSpinner spinner_17;
 	private JSpinner spinner_18;
-	
-	//MENU
+
+	// MENU
 	private JMenuBar menuBar;
 	private JMenu mnFile;
 	private JMenuItem mntmClose;
@@ -69,15 +69,14 @@ public class Main_Window_Testdata extends JFrame {
 	private JMenuItem mntmCheatSheet;
 	private JSeparator separator;
 	private JMenuItem mntmAbout;
-	
-	//DIVERSE BUTTONS
+
+	// DIVERSE BUTTONS
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JButton btnSubmit;
 	private JButton btnBack;
 	private JRadioButton rdbtnEherLinks;
 	private JRadioButton rdbtnEherRechts;
 	private JRadioButton rdbtnBeidfig;
-	
 
 	/**
 	 * Create the frame.
@@ -99,11 +98,11 @@ public class Main_Window_Testdata extends JFrame {
 		initMenu();
 
 		initButtons();
-		
+
 		initLabels();
-		
+
 		initSpinners();
-		
+
 		initActionListeners(mntmClose, mntmCheatSheet, mntmAbout, btnSubmit,
 				btnBack);
 	}
@@ -120,7 +119,7 @@ public class Main_Window_Testdata extends JFrame {
 		btnBack = new JButton("Back");
 		btnBack.setBounds(15, 515, 115, 29);
 		contentPane.add(btnBack);
-		
+
 		rdbtnEherLinks = new JRadioButton("eher links");
 		buttonGroup.add(rdbtnEherLinks);
 		rdbtnEherLinks.setBounds(419, 397, 109, 23);
@@ -169,19 +168,22 @@ public class Main_Window_Testdata extends JFrame {
 	 */
 	private void initLabels() {
 		JLabel lblAusdauer = new JLabel("Ergebnis - Yo-Yo Test (in m)");
-		lblAusdauer.setToolTipText("Der Yo-Yo Test zeigt nach Di Salvo et al. (2006) eine enge Korrelation \r\nzwischen der zur\u00FCckgelegten Distanz im Test und der Positionsrolle \r\ndes Spielers.");
+		lblAusdauer
+				.setToolTipText("Der Yo-Yo Test zeigt nach Di Salvo et al. (2006) eine enge Korrelation \r\nzwischen der zur\u00FCckgelegten Distanz im Test und der Positionsrolle \r\ndes Spielers.");
 		lblAusdauer.setBounds(10, 60, 236, 14);
 		contentPane.add(lblAusdauer);
-		
+
 		JLabel lblAusdauerfhigkeiten = new JLabel("Ausdauerf\u00E4higkeiten");
 		lblAusdauerfhigkeiten.setToolTipText("");
-		lblAusdauerfhigkeiten.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
+		lblAusdauerfhigkeiten.setFont(new Font("Arial",
+				Font.BOLD | Font.ITALIC, 13));
 		lblAusdauerfhigkeiten.setBounds(10, 35, 236, 14);
 		contentPane.add(lblAusdauerfhigkeiten);
 
 		JLabel lblSchnelligkeitsfhigkeiten = new JLabel(
 				"Schnelligkeitsf\u00E4higkeiten");
-		lblSchnelligkeitsfhigkeiten.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
+		lblSchnelligkeitsfhigkeiten.setFont(new Font("Arial", Font.BOLD
+				| Font.ITALIC, 13));
 		lblSchnelligkeitsfhigkeiten.setBounds(10, 95, 299, 14);
 		contentPane.add(lblSchnelligkeitsfhigkeiten);
 
@@ -277,7 +279,8 @@ public class Main_Window_Testdata extends JFrame {
 		contentPane.add(lblSchsseAufsTor_1);
 
 		JLabel lblZweikampfverhalten = new JLabel("Zweikampfverhalten");
-		lblZweikampfverhalten.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
+		lblZweikampfverhalten.setFont(new Font("Arial",
+				Font.BOLD | Font.ITALIC, 13));
 		lblZweikampfverhalten.setBounds(423, 230, 236, 14);
 		contentPane.add(lblZweikampfverhalten);
 
@@ -292,7 +295,8 @@ public class Main_Window_Testdata extends JFrame {
 		contentPane.add(lblDefensiveZweikmpfe);
 
 		JLabel lblSpielverstndnis = new JLabel("Spielverst\u00E4ndnis");
-		lblSpielverstndnis.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
+		lblSpielverstndnis.setFont(new Font("Arial", Font.BOLD | Font.ITALIC,
+				13));
 		lblSpielverstndnis.setBounds(423, 315, 237, 14);
 		contentPane.add(lblSpielverstndnis);
 
@@ -311,10 +315,10 @@ public class Main_Window_Testdata extends JFrame {
 	 * 
 	 */
 	private void initSpinners() {
-		spinner = new JSpinner();
-		spinner.setBounds(256, 57, 53, 20);
-		contentPane.add(spinner);
-		
+		spinner_0 = new JSpinner();
+		spinner_0.setBounds(256, 57, 53, 20);
+		contentPane.add(spinner_0);
+
 		spinner_1 = new JSpinner();
 		spinner_1.setBounds(256, 117, 53, 20);
 		contentPane.add(spinner_1);
@@ -326,12 +330,11 @@ public class Main_Window_Testdata extends JFrame {
 		spinner_3 = new JSpinner();
 		spinner_3.setBounds(256, 167, 53, 20);
 		contentPane.add(spinner_3);
-		
-		
+
 		spinner_4 = new JSpinner();
 		spinner_4.setBounds(256, 227, 53, 20);
 		contentPane.add(spinner_4);
-		
+
 		spinner_5 = new JSpinner();
 		spinner_5.setBounds(256, 287, 53, 20);
 		contentPane.add(spinner_5);
@@ -347,7 +350,7 @@ public class Main_Window_Testdata extends JFrame {
 		spinner_8 = new JSpinner();
 		spinner_8.setBounds(256, 362, 53, 20);
 		contentPane.add(spinner_8);
-		
+
 		spinner_9 = new JSpinner();
 		spinner_9.setBounds(256, 422, 53, 20);
 		contentPane.add(spinner_9);
@@ -355,7 +358,7 @@ public class Main_Window_Testdata extends JFrame {
 		spinner_10 = new JSpinner();
 		spinner_10.setBounds(256, 447, 53, 20);
 		contentPane.add(spinner_10);
-		
+
 		spinner_11 = new JSpinner();
 		spinner_11.setBounds(669, 57, 53, 20);
 		contentPane.add(spinner_11);
@@ -367,7 +370,7 @@ public class Main_Window_Testdata extends JFrame {
 		spinner_13 = new JSpinner();
 		spinner_13.setBounds(669, 107, 53, 20);
 		contentPane.add(spinner_13);
-		
+
 		spinner_14 = new JSpinner();
 		spinner_14.setBounds(673, 167, 49, 20);
 		contentPane.add(spinner_14);
@@ -375,7 +378,7 @@ public class Main_Window_Testdata extends JFrame {
 		spinner_15 = new JSpinner();
 		spinner_15.setBounds(673, 192, 49, 20);
 		contentPane.add(spinner_15);
-		
+
 		spinner_16 = new JSpinner();
 		spinner_16.setBounds(673, 252, 49, 20);
 		contentPane.add(spinner_16);
@@ -383,7 +386,7 @@ public class Main_Window_Testdata extends JFrame {
 		spinner_17 = new JSpinner();
 		spinner_17.setBounds(673, 277, 49, 20);
 		contentPane.add(spinner_17);
-		
+
 		spinner_18 = new JSpinner();
 		spinner_18.setModel(new SpinnerNumberModel(1, 1, 6, 1));
 		spinner_18.setBounds(673, 337, 49, 20);
@@ -428,8 +431,10 @@ public class Main_Window_Testdata extends JFrame {
 
 				System.out.println("Calculating Optimal Position");
 
+				getValues();
+				
 				player = new Player(values);
-				// player.printValues(values);
+				player.printValues(values);
 				player.calcPos();
 
 				// String inhabits the calculated Positions
@@ -458,6 +463,44 @@ public class Main_Window_Testdata extends JFrame {
 		});
 	}
 
+	/**
+	 * fills the blank array with the values from the spinners
+	 */
+	private void getValues() {
+		
+		int foot = 0;
+		
+		values[0] = Integer.parseInt(spinner_0.getValue().toString());
+		values[1] = Integer.parseInt(spinner_1.getValue().toString());
+		values[2] = Integer.parseInt(spinner_2.getValue().toString());
+		values[3] = Integer.parseInt(spinner_3.getValue().toString());
+		values[4] = Integer.parseInt(spinner_4.getValue().toString());
+		values[5] = Integer.parseInt(spinner_5.getValue().toString());
+		values[6] = Integer.parseInt(spinner_6.getValue().toString());
+		values[7] = Integer.parseInt(spinner_7.getValue().toString());
+		values[8] = Integer.parseInt(spinner_8.getValue().toString());
+		values[9] = Integer.parseInt(spinner_9.getValue().toString());
+		values[10] = Integer.parseInt(spinner_10.getValue().toString());
+		values[11] = Integer.parseInt(spinner_11.getValue().toString());
+		values[12] = Integer.parseInt(spinner_12.getValue().toString());
+		values[13] = Integer.parseInt(spinner_13.getValue().toString());
+		values[14] = Integer.parseInt(spinner_14.getValue().toString());
+		values[15] = Integer.parseInt(spinner_15.getValue().toString());
+		values[16] = Integer.parseInt(spinner_16.getValue().toString());
+		values[17] = Integer.parseInt(spinner_17.getValue().toString());
+		values[18] = Integer.parseInt(spinner_18.getValue().toString());
+		
+		//linker Fuﬂ = 1, rechter Fuﬂ = 2; beidf¸ﬂig = 3
+		if(rdbtnEherLinks.isSelected()) {
+			foot = 1;
+		} else if(rdbtnEherRechts.isSelected()) {
+			foot = 2;
+		} else if(rdbtnBeidfig.isSelected()) {
+			foot = 3;
+		}
+		values[19] = foot;
+		
+	}
 	public int[] deliverValues() {
 		return values;
 	}
