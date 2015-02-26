@@ -1,11 +1,11 @@
 package control;
 
-public class Calculator {
+public class Analyzer_TestData {
 
 	//contains players values
 	int[] values;
 	
-	public Calculator(int[] values) {
+	public Analyzer_TestData(int[] values) {
 		this.values = values;
 	}
 	

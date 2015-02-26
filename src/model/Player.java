@@ -1,6 +1,6 @@
 package model;
 
-import control.Calculator;
+import control.Analyzer_TestData;
 
 public class Player {
 
@@ -18,7 +18,7 @@ public class Player {
 	}
 	
 	public void calcPos() {
-		Calculator calc = new Calculator(values);
+		Analyzer_TestData calc = new Analyzer_TestData(values);
 		positions = calc.run();
 	}
 }
