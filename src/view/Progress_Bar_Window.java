@@ -25,10 +25,13 @@ public class Progress_Bar_Window extends JDialog {
 	private static final long serialVersionUID = 1L;
 	JProgressBar progressBar;
 
+	int time;
+	
 	/**
 	 * Create the dialog.
 	 */
-	public Progress_Bar_Window() {
+	public Progress_Bar_Window(int time) {
+		this.time = time;
 		setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
 		setAlwaysOnTop(true);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(
@@ -64,7 +67,7 @@ public class Progress_Bar_Window extends JDialog {
 			public void run() {
 				for (int i = 0; i <= 100; i++) {
 					try {
-						Thread.sleep(25);
+						Thread.sleep(time);
 					} catch (InterruptedException ex) {
 					}
 					progressBar.setValue(i);

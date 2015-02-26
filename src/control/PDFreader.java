@@ -9,6 +9,8 @@ import java.io.FileOutputStream;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Cell;
 
+import view.Progress_Bar_Window;
+
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 
@@ -102,104 +104,96 @@ public class PDFreader {
 										.indexOf("erfolgreiche") + 18,
 								PdfTextExtractor.getTextFromPage(reader, i)
 										.indexOf("%") - 3);
-			} catch (IOException e) {
 
-				e.printStackTrace();
-			}
-
-			try {
 				aktionenProSpiel = PdfTextExtractor.getTextFromPage(reader, i)
 						.substring(
 								PdfTextExtractor.getTextFromPage(reader, i)
 										.indexOf("erfolgreiche") + 13,
 								PdfTextExtractor.getTextFromPage(reader, i)
 										.indexOf("erfolgreiche") + 16);
-			} catch (IOException e) {
 
-				e.printStackTrace();
-			}
-
-			try {
 				namePDF = PdfTextExtractor.getTextFromPage(reader, i)
 						.substring(
 								PdfTextExtractor.getTextFromPage(reader, i)
 										.indexOf(".") + 1,
 								PdfTextExtractor.getTextFromPage(reader, i)
 										.indexOf("#") - 1);
-			} catch (IOException e) {
 
-				e.printStackTrace();
-			}
-
-			try {
 				schüsseProSpiel = PdfTextExtractor.getTextFromPage(reader, i)
 						.substring(
 								PdfTextExtractor.getTextFromPage(reader, i)
 										.indexOf("Tor") + 3,
 								PdfTextExtractor.getTextFromPage(reader, i)
 										.indexOf("Tor") + 6);
-			} catch (IOException e) {
 
-				e.printStackTrace();
-			}
-
-			try {
 				schüsseAufDasTor = PdfTextExtractor.getTextFromPage(reader, i)
 						.substring(
 								PdfTextExtractor.getTextFromPage(reader, i)
 										.indexOf("Tor") + 7,
 								PdfTextExtractor.getTextFromPage(reader, i)
 										.indexOf("Tor") + 9);
-			} catch (IOException e) {
 
-				e.printStackTrace();
-			}
-
-			try {
 				fouls = PdfTextExtractor.getTextFromPage(reader, i).substring(
 						PdfTextExtractor.getTextFromPage(reader, i).indexOf(
 								"ihn") + 3,
 						PdfTextExtractor.getTextFromPage(reader, i).indexOf(
 								"ihn") + 6);
-			} catch (IOException e) {
 
-				e.printStackTrace();
-			}
-
-			try {
 				foulsGegenIhn = PdfTextExtractor.getTextFromPage(reader, i)
 						.substring(
 								PdfTextExtractor.getTextFromPage(reader, i)
 										.indexOf("ihn") + 7,
 								PdfTextExtractor.getTextFromPage(reader, i)
 										.indexOf("ihn") + 9);
-			} catch (IOException e) {
 
-				e.printStackTrace();
-			}
-			try {
 				pässe = PdfTextExtractor.getTextFromPage(reader, i).substring(
 						PdfTextExtractor.getTextFromPage(reader, i).indexOf(
 								"ise") + 3,
 						PdfTextExtractor.getTextFromPage(reader, i).indexOf(
 								"ise") + 7);
-			} catch (IOException e) {
 
-				e.printStackTrace();
-			}
-
-			try {
 				pässePräzise = PdfTextExtractor.getTextFromPage(reader, i)
 						.substring(
 								PdfTextExtractor.getTextFromPage(reader, i)
 										.indexOf("ise") + 8,
 								PdfTextExtractor.getTextFromPage(reader, i)
 										.indexOf("ise") + 12);
-			} catch (IOException e) {
 
-				e.printStackTrace();
-			}
-			try {
+				zweikämpfeGewonnen = PdfTextExtractor
+						.getTextFromPage(reader, i).substring(
+								PdfTextExtractor.getTextFromPage(reader, i)
+										.indexOf("gewonnene") + 13,
+								PdfTextExtractor.getTextFromPage(reader, i)
+										.indexOf("gewonnene") + 17);
+
+				abgefangene = PdfTextExtractor.getTextFromPage(reader, i)
+						.substring(
+								PdfTextExtractor.getTextFromPage(reader, i)
+										.indexOf("fte") + 3,
+								PdfTextExtractor.getTextFromPage(reader, i)
+										.indexOf("fte") + 6);
+
+				ballverlust = PdfTextExtractor.getTextFromPage(reader, i)
+						.substring(
+								PdfTextExtractor.getTextFromPage(reader, i)
+										.indexOf("Ballverlust") + 32,
+								PdfTextExtractor.getTextFromPage(reader, i)
+										.indexOf("Ballverlust") + 34);
+
+				ballverlustEigeneHälfte = PdfTextExtractor.getTextFromPage(
+						reader, i).substring(
+						PdfTextExtractor.getTextFromPage(reader, i).indexOf(
+								"Ballverlust") + 35,
+						PdfTextExtractor.getTextFromPage(reader, i).indexOf(
+								"Ballverlust") + 38);
+
+				abgefangeneInHälfteGegner = PdfTextExtractor.getTextFromPage(
+						reader, i).substring(
+						PdfTextExtractor.getTextFromPage(reader, i).indexOf(
+								"fte") + 7,
+						PdfTextExtractor.getTextFromPage(reader, i).indexOf(
+								"fte") + 9);
+
 				zweikämpfe = PdfTextExtractor.getTextFromPage(reader, i)
 						.substring(
 								PdfTextExtractor.getTextFromPage(reader, i)
@@ -210,61 +204,7 @@ public class PDFreader {
 
 				e.printStackTrace();
 			}
-			try {
-				zweikämpfeGewonnen = PdfTextExtractor
-						.getTextFromPage(reader, i).substring(
-								PdfTextExtractor.getTextFromPage(reader, i)
-										.indexOf("gewonnene") + 13,
-								PdfTextExtractor.getTextFromPage(reader, i)
-										.indexOf("gewonnene") + 17);
-			} catch (IOException e) {
 
-				e.printStackTrace();
-			}
-			try {
-				abgefangene = PdfTextExtractor.getTextFromPage(reader, i)
-						.substring(
-								PdfTextExtractor.getTextFromPage(reader, i)
-										.indexOf("fte") + 3,
-								PdfTextExtractor.getTextFromPage(reader, i)
-										.indexOf("fte") + 6);
-			} catch (IOException e) {
-
-				e.printStackTrace();
-			}
-			try {
-				abgefangeneInHälfteGegner = PdfTextExtractor.getTextFromPage(
-						reader, i).substring(
-						PdfTextExtractor.getTextFromPage(reader, i).indexOf(
-								"fte") + 7,
-						PdfTextExtractor.getTextFromPage(reader, i).indexOf(
-								"fte") + 9);
-			} catch (IOException e) {
-
-				e.printStackTrace();
-			}
-			try {
-				ballverlust = PdfTextExtractor.getTextFromPage(reader, i)
-						.substring(
-								PdfTextExtractor.getTextFromPage(reader, i)
-										.indexOf("Ballverlust") + 32,
-								PdfTextExtractor.getTextFromPage(reader, i)
-										.indexOf("Ballverlust") + 34);
-			} catch (IOException e) {
-
-				e.printStackTrace();
-			}
-			try {
-				ballverlustEigeneHälfte = PdfTextExtractor.getTextFromPage(
-						reader, i).substring(
-						PdfTextExtractor.getTextFromPage(reader, i).indexOf(
-								"Ballverlust") + 35,
-						PdfTextExtractor.getTextFromPage(reader, i).indexOf(
-								"Ballverlust") + 38);
-			} catch (IOException e) {
-
-				e.printStackTrace();
-			}
 			// ZEllEN ANLEGEN
 			Cell name = blatt.createRow(a).createCell(0); // Name
 			Cell cell1 = blatt.createRow(a).createCell(1); // Aktionen pro Spiel
@@ -379,6 +319,8 @@ public class PDFreader {
 			FileOutputStream exceloutput = new FileOutputStream(
 					"DatenWolfsburg.xls");
 			datei.write(exceloutput);
+			// TO-DO: new Window with Data
+			// Window with Algorithm and Details from Data
 			System.out.println("FERTIG");
 
 		}

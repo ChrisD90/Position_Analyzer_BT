@@ -84,6 +84,7 @@ public class Main_Window_Spielbeobachtung extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				PDFreader reader = new PDFreader(pdf_path);
+				reader.readPDF();
 			}
 		});
 	}

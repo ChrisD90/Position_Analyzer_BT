@@ -433,7 +433,7 @@ public class Main_Window_Testdata extends JFrame {
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				Progress_Bar_Window dialog = new Progress_Bar_Window();
+				Progress_Bar_Window dialog = new Progress_Bar_Window(25);
 				dialog.setVisible(true);
 
 				System.out.println("Calculating Optimal Position");
