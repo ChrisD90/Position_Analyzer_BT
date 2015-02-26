@@ -1,21 +1,15 @@
 package view;
 
-import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.ImageIcon;
 
 import java.awt.Toolkit;
 
@@ -25,6 +19,10 @@ import java.awt.Color;
 
 public class Progress_Bar_Window extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	JProgressBar progressBar;
 
 	/**
@@ -35,11 +33,11 @@ public class Progress_Bar_Window extends JDialog {
 		setAlwaysOnTop(true);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(
 				Progress_Bar_Window.class.getResource("/media/player.jpg")));
-		
+
 		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 		int x = dimension.width;
 		int y = dimension.height;
-		setBounds(((x-450)/2), ((y-300)/2), 450, 300);
+		setBounds(((x - 450) / 2), ((y - 300) / 2), 450, 300);
 		getContentPane().setLayout(null);
 
 		progressBar = new JProgressBar();
@@ -47,7 +45,7 @@ public class Progress_Bar_Window extends JDialog {
 		progressBar.setBounds(100, 135, 232, 14);
 		getContentPane().add(progressBar);
 		progressBar.setStringPainted(true);
-		
+
 		JButton okButton = new JButton("OK");
 		okButton.setEnabled(false);
 		okButton.setBounds(15, 208, 106, 42);
@@ -70,7 +68,7 @@ public class Progress_Bar_Window extends JDialog {
 					} catch (InterruptedException ex) {
 					}
 					progressBar.setValue(i);
-					
+
 				}
 				okButton.setEnabled(true);
 			}
@@ -84,8 +82,6 @@ public class Progress_Bar_Window extends JDialog {
 		lblPositionWirdAuf.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPositionWirdAuf.setBounds(15, 68, 398, 56);
 		getContentPane().add(lblPositionWirdAuf);
-
-		
 
 	}
 

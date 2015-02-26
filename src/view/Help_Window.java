@@ -1,21 +1,18 @@
 package view;
 
-import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTextPane;
+
 
 import java.awt.Color;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JScrollBar;
-import javax.swing.DropMode;
+
 
 import java.awt.TextArea;
 import java.awt.event.ActionEvent;
@@ -23,6 +20,10 @@ import java.awt.event.ActionListener;
 
 public class Help_Window extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**

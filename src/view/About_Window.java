@@ -1,12 +1,7 @@
 package view;
 
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 
 import java.awt.TextArea;
 import java.awt.Font;
@@ -15,7 +10,6 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
 import java.awt.Dimension;
-import java.awt.Label;
 import java.awt.Color;
 import java.awt.SystemColor;
 import java.awt.Toolkit;
@@ -23,6 +17,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class About_Window extends JDialog {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Create the dialog.
