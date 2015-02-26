@@ -21,8 +21,11 @@ import model.Player;
 import java.awt.Toolkit;
 
 import javax.swing.JSeparator;
+
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Component;
+
 import javax.swing.Box;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
@@ -89,7 +92,11 @@ public class Main_Window_Testdata extends JFrame {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		setBounds(100, 100, 800, 600);
+		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+		int x = dimension.width;
+		int y = dimension.height;
+		setBounds(((x-800)/2), ((y-600)/2), 800, 600);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

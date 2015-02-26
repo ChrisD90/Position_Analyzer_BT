@@ -14,9 +14,11 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
+import java.awt.Dimension;
 import java.awt.Label;
 import java.awt.Color;
 import java.awt.SystemColor;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -26,12 +28,18 @@ public class About_Window extends JDialog {
 	 * Create the dialog.
 	 */
 	public About_Window() {
+		setAlwaysOnTop(true);
 		setBackground(SystemColor.window);
 		setTitle("About...");
 		setResizable(false);
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 530, 300);
+		
+		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+		int x = dimension.width;
+		int y = dimension.height;
+		setBounds(((x-530)/2), ((y-300)/2), 530, 300);
 		getContentPane().setLayout(null);
+		
 		{
 			JButton btnClose = new JButton("Close");
 			btnClose.setBounds(425, 237, 89, 23);

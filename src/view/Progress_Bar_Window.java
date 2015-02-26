@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 
 import javax.swing.JButton;
@@ -34,7 +35,11 @@ public class Progress_Bar_Window extends JDialog {
 		setAlwaysOnTop(true);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(
 				Progress_Bar_Window.class.getResource("/media/player.jpg")));
-		setBounds(450, 200, 450, 300);
+		
+		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+		int x = dimension.width;
+		int y = dimension.height;
+		setBounds(((x-450)/2), ((y-300)/2), 450, 300);
 		getContentPane().setLayout(null);
 
 		progressBar = new JProgressBar();

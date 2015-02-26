@@ -1,7 +1,9 @@
 package view;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -27,10 +29,16 @@ public class Help_Window extends JFrame {
 	 * Create the frame.
 	 */
 	public Help_Window() {
+		setAlwaysOnTop(true);
 		setBackground(Color.WHITE);
 		setTitle("Help");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 800, 600);
+		
+		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+		int x = dimension.width;
+		int y = dimension.height;
+		setBounds(((x-800)/2), ((y-600)/2), 800, 600);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

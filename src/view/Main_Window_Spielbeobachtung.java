@@ -1,7 +1,9 @@
 package view;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -25,9 +27,12 @@ public class Main_Window_Spielbeobachtung extends JFrame {
 	 */
 	public Main_Window_Spielbeobachtung() {
 		setTitle("Analyse auf Grundlage von Spielbeobachtungsdaten...");
-
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 600);
+		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+		int x = dimension.width;
+		int y = dimension.height;
+		setBounds(((x-800)/2), ((y-600)/2), 800, 600);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
