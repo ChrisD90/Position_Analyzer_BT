@@ -9,8 +9,6 @@ import java.io.FileOutputStream;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Cell;
 
-import view.Progress_Bar_Window;
-
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 
@@ -29,6 +27,7 @@ public class PDFreader {
 
 		// RUND UM EXCEL
 		// Erstellt Excel Datei
+		@SuppressWarnings("resource")
 		HSSFWorkbook datei = new HSSFWorkbook();
 		// Erstellt Datenblatt in Excel Datei, Name Sheet in die Klammer
 		Sheet blatt = datei.createSheet();
@@ -230,8 +229,9 @@ public class PDFreader {
 			Cell cell14 = blatt.createRow(a).createCell(14); // Ballverlust in
 																// der eigenen
 																// Hälfte
-			Cell cell15 = blatt.createRow(a).createCell(15); // noch offen
-			Cell cell16 = blatt.createRow(a).createCell(16);
+			//Cell cell15 = blatt.createRow(a).createCell(15); // noch offen
+			//Cell cell16 = blatt.createRow(a).createCell(16);
+			
 			// ZELLEN WERTE ZUWEISEN
 			name.setCellValue(namePDF.trim());
 			cell1.setCellValue(aktionenProSpiel);

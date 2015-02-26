@@ -1,18 +1,22 @@
 package view;
 
 import java.awt.Dimension;
+import java.awt.ScrollPane;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
 import control.FileChooser;
 import control.PDFreader;
+
+import javax.swing.JTable;
 
 public class Main_Window_Spielbeobachtung extends JFrame {
 
@@ -34,8 +38,8 @@ public class Main_Window_Spielbeobachtung extends JFrame {
 		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 		int x = dimension.width;
 		int y = dimension.height;
-		setBounds(((x-800)/2), ((y-600)/2), 800, 600);
-		
+		setBounds(((x - 800) / 2), ((y - 600) / 2), 800, 600);
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -53,7 +57,7 @@ public class Main_Window_Spielbeobachtung extends JFrame {
 		btnReadPdf.setEnabled(false);
 		btnReadPdf.setBounds(15, 77, 115, 29);
 		contentPane.add(btnReadPdf);
-		
+
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(145, 20, 618, 20);
 		contentPane.add(lblNewLabel);
@@ -78,19 +82,25 @@ public class Main_Window_Spielbeobachtung extends JFrame {
 				dispose();
 			}
 		});
-		
+
 		btnReadPdf.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				PDFreader reader = new PDFreader(pdf_path);
 				reader.readPDF();
+
+				//TO-DO
+				initTable();
+
 			}
 		});
 	}
 
-	private void readPdf() {
-
+	/**
+	 * TO-DO: shows Data as a JTable
+	 */
+	private void initTable() {
+		
 	}
-
 }
