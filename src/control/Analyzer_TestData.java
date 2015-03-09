@@ -13,7 +13,7 @@ public class Analyzer_TestData {
 		
 		String string ="";
 		
-		//DO CALCULATIONS AND APPEND POSSIBLE POSITIONS tO string SUCH AS: MF, ZM, ST
+		//DO CALCULATIONS AND APPEND POSSIBLE POSITIONS to string SUCH AS: MF, ZM, ST
 		string = "MF";
 		
 		
