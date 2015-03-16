@@ -25,6 +25,7 @@ import javax.swing.JSeparator;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Component;
+import java.awt.Window;
 
 import javax.swing.Box;
 import javax.swing.JRadioButton;
@@ -39,30 +40,9 @@ public class Main_Window_Testdata extends JFrame {
 
 	// GENERAL STUFF
 	private JPanel contentPane;
-	public int[] values = new int[20];
+	public double[] values = new double[17];
 
 	Player player;
-
-	// SPINNER
-	private JSpinner spinner_0;
-	private JSpinner spinner_1;
-	private JSpinner spinner_2;
-	private JSpinner spinner_3;
-	private JSpinner spinner_4;
-	private JSpinner spinner_5;
-	private JSpinner spinner_6;
-	private JSpinner spinner_7;
-	private JSpinner spinner_8;
-	private JSpinner spinner_9;
-	private JSpinner spinner_10;
-	private JSpinner spinner_11;
-	private JSpinner spinner_12;
-	private JSpinner spinner_13;
-	private JSpinner spinner_14;
-	private JSpinner spinner_15;
-	private JSpinner spinner_16;
-	private JSpinner spinner_17;
-	private JSpinner spinner_18;
 
 	// MENU
 	private JMenuBar menuBar;
@@ -81,6 +61,24 @@ public class Main_Window_Testdata extends JFrame {
 	private JRadioButton rdbtnEherRechts;
 	private JRadioButton rdbtnBeidfig;
 
+	//SPINNERS
+	private JSpinner spinner_0;
+	private JSpinner spinner_1;
+	private JSpinner spinner_2;
+	private JSpinner spinner_3;
+	private JSpinner spinner_4;
+	private JSpinner spinner_5;
+	private JSpinner spinner_6;
+	private JSpinner spinner_7;
+	private JSpinner spinner_8;
+	private JSpinner spinner_9;
+	private JSpinner spinner_10;
+	private JSpinner spinner_11;
+	private JSpinner spinner_12;
+	private JSpinner spinner_13;
+	private JSpinner spinner_14;
+	private JSpinner spinner_15;
+	
 	/**
 	 * Create the frame.
 	 */
@@ -112,6 +110,7 @@ public class Main_Window_Testdata extends JFrame {
 
 		initActionListeners(mntmClose, mntmCheatSheet, mntmAbout, btnSubmit,
 				btnBack);
+		
 	}
 
 	/**
@@ -129,17 +128,17 @@ public class Main_Window_Testdata extends JFrame {
 
 		rdbtnEherLinks = new JRadioButton("eher links");
 		buttonGroup.add(rdbtnEherLinks);
-		rdbtnEherLinks.setBounds(419, 397, 109, 23);
+		rdbtnEherLinks.setBounds(423, 307, 109, 23);
 		contentPane.add(rdbtnEherLinks);
 
 		rdbtnEherRechts = new JRadioButton("eher rechts");
 		buttonGroup.add(rdbtnEherRechts);
-		rdbtnEherRechts.setBounds(530, 397, 109, 23);
+		rdbtnEherRechts.setBounds(534, 307, 109, 23);
 		contentPane.add(rdbtnEherRechts);
 
 		rdbtnBeidfig = new JRadioButton("beidf\u00FC\u00DFig");
 		buttonGroup.add(rdbtnBeidfig);
-		rdbtnBeidfig.setBounds(641, 397, 109, 23);
+		rdbtnBeidfig.setBounds(645, 307, 109, 23);
 		contentPane.add(rdbtnBeidfig);
 	}
 
@@ -215,39 +214,13 @@ public class Main_Window_Testdata extends JFrame {
 		lblErgebnisJump.setBounds(10, 230, 236, 14);
 		contentPane.add(lblErgebnisJump);
 
-		JLabel lblPassspiel = new JLabel("Passspiel");
+		JLabel lblPassspiel = new JLabel("Passspiel/Flanken");
 		lblPassspiel.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
 		lblPassspiel.setBounds(10, 265, 236, 14);
 		contentPane.add(lblPassspiel);
 
-		JLabel lblKurzePsse = new JLabel("kurze P\u00E4sse - total");
-		lblKurzePsse.setBounds(10, 290, 236, 14);
-		contentPane.add(lblKurzePsse);
-
-		JLabel lblLangePsse = new JLabel("lange P\u00E4sse - total");
-		lblLangePsse.setBounds(10, 315, 236, 14);
-		contentPane.add(lblLangePsse);
-
-		JLabel lblKurzePsse_1 = new JLabel("kurze P\u00E4sse - erfolgreich");
-		lblKurzePsse_1.setBounds(10, 340, 236, 14);
-		contentPane.add(lblKurzePsse_1);
-
-		JLabel lblLangePsseErfolgreich = new JLabel(
-				"lange P\u00E4sse - erfolgreich");
-		lblLangePsseErfolgreich.setBounds(10, 365, 236, 14);
-		contentPane.add(lblLangePsseErfolgreich);
-
-		JLabel lblFlanken = new JLabel("Flanken");
-		lblFlanken.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
-		lblFlanken.setBounds(10, 400, 236, 14);
-		contentPane.add(lblFlanken);
-
-		JLabel lblFlankenTotal = new JLabel("Flanken - total");
-		lblFlankenTotal.setBounds(10, 425, 236, 14);
-		contentPane.add(lblFlankenTotal);
-
 		JLabel lblFlankenAngekommen = new JLabel("Flanken - angekommen");
-		lblFlankenAngekommen.setBounds(10, 450, 236, 14);
+		lblFlankenAngekommen.setBounds(10, 340, 236, 14);
 		contentPane.add(lblFlankenAngekommen);
 
 		Component verticalStrut = Box.createVerticalStrut(20);
@@ -256,66 +229,74 @@ public class Main_Window_Testdata extends JFrame {
 
 		JLabel lblDribbling = new JLabel("Dribbling");
 		lblDribbling.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
-		lblDribbling.setBounds(423, 36, 236, 14);
+		lblDribbling.setBounds(419, 95, 236, 14);
 		contentPane.add(lblDribbling);
 
 		JLabel lblmZeit_2 = new JLabel("5m - Zeit in 1/10s");
-		lblmZeit_2.setBounds(423, 60, 236, 14);
+		lblmZeit_2.setBounds(419, 119, 236, 14);
 		contentPane.add(lblmZeit_2);
 
 		JLabel lblmZeit_3 = new JLabel("10m - Zeit in 1/10s");
-		lblmZeit_3.setBounds(423, 85, 236, 14);
+		lblmZeit_3.setBounds(419, 144, 236, 14);
 		contentPane.add(lblmZeit_3);
 
 		JLabel lblmZeit_4 = new JLabel("30m - Zeit in 1/10s");
-		lblmZeit_4.setBounds(423, 110, 236, 14);
+		lblmZeit_4.setBounds(419, 169, 236, 14);
 		contentPane.add(lblmZeit_4);
 
 		JLabel lblTorschuss = new JLabel("Torschuss");
 		lblTorschuss.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
-		lblTorschuss.setBounds(423, 145, 236, 14);
+		lblTorschuss.setBounds(423, 226, 236, 14);
 		contentPane.add(lblTorschuss);
-
-		JLabel lblSchsseAufsTor = new JLabel("Sch\u00FCsse aufs Tor - total");
-		lblSchsseAufsTor.setBounds(423, 170, 236, 14);
-		contentPane.add(lblSchsseAufsTor);
 
 		JLabel lblSchsseAufsTor_1 = new JLabel(
 				"Sch\u00FCsse aufs Tor - erfolgreich");
-		lblSchsseAufsTor_1.setBounds(423, 195, 236, 14);
+		lblSchsseAufsTor_1.setBounds(423, 251, 236, 14);
 		contentPane.add(lblSchsseAufsTor_1);
 
 		JLabel lblZweikampfverhalten = new JLabel("Zweikampfverhalten");
 		lblZweikampfverhalten.setFont(new Font("Arial",
 				Font.BOLD | Font.ITALIC, 13));
-		lblZweikampfverhalten.setBounds(423, 230, 236, 14);
+		lblZweikampfverhalten.setBounds(10, 375, 236, 14);
 		contentPane.add(lblZweikampfverhalten);
 
 		JLabel lblOffensiveZweikmpfe = new JLabel(
 				"Offensive Zweik\u00E4mpfe - gewonnen");
-		lblOffensiveZweikmpfe.setBounds(423, 255, 236, 14);
+		lblOffensiveZweikmpfe.setBounds(10, 400, 236, 14);
 		contentPane.add(lblOffensiveZweikmpfe);
 
 		JLabel lblDefensiveZweikmpfe = new JLabel(
 				"Defensive Zweik\u00E4mpfe - gewonnen");
-		lblDefensiveZweikmpfe.setBounds(423, 280, 236, 14);
+		lblDefensiveZweikmpfe.setBounds(10, 425, 236, 14);
 		contentPane.add(lblDefensiveZweikmpfe);
 
 		JLabel lblSpielverstndnis = new JLabel("Spielverst\u00E4ndnis");
 		lblSpielverstndnis.setFont(new Font("Arial", Font.BOLD | Font.ITALIC,
 				13));
-		lblSpielverstndnis.setBounds(423, 315, 237, 14);
+		lblSpielverstndnis.setBounds(419, 35, 237, 14);
 		contentPane.add(lblSpielverstndnis);
 
 		JLabel lblEinschtzungAlsSchulnote = new JLabel(
 				"Einsch\u00E4tzung als Schulnote");
-		lblEinschtzungAlsSchulnote.setBounds(423, 340, 236, 14);
+		lblEinschtzungAlsSchulnote.setBounds(419, 60, 236, 14);
 		contentPane.add(lblEinschtzungAlsSchulnote);
 
 		JLabel lblFuarbeit = new JLabel("Fu\u00DFarbeit");
 		lblFuarbeit.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
-		lblFuarbeit.setBounds(423, 380, 236, 14);
+		lblFuarbeit.setBounds(423, 286, 236, 14);
 		contentPane.add(lblFuarbeit);
+		
+		JLabel lblPassKurz = new JLabel("Pass kurz - Zeit in sec");
+		lblPassKurz.setBounds(10, 290, 236, 14);
+		contentPane.add(lblPassKurz);
+		
+		JLabel lblPassWeit = new JLabel("Pass weit - erflogreich");
+		lblPassWeit.setBounds(10, 316, 236, 14);
+		contentPane.add(lblPassWeit);
+		
+		JLabel lblmZeit_5 = new JLabel("60m - Zeit in 10/s");
+		lblmZeit_5.setBounds(419, 194, 220, 14);
+		contentPane.add(lblmZeit_5);
 	}
 
 	/**
@@ -323,81 +304,84 @@ public class Main_Window_Testdata extends JFrame {
 	 */
 	private void initSpinners() {
 		spinner_0 = new JSpinner();
-		spinner_0.setBounds(256, 57, 53, 20);
+		spinner_0.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
+		spinner_0.setBounds(310, 57, 54, 20);
 		contentPane.add(spinner_0);
-
+		
 		spinner_1 = new JSpinner();
-		spinner_1.setBounds(256, 117, 53, 20);
+		spinner_1.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
+		spinner_1.setBounds(310, 117, 54, 20);
 		contentPane.add(spinner_1);
-
+		
 		spinner_2 = new JSpinner();
-		spinner_2.setBounds(256, 142, 53, 20);
+		spinner_2.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
+		spinner_2.setBounds(310, 142, 54, 20);
 		contentPane.add(spinner_2);
-
+		
 		spinner_3 = new JSpinner();
-		spinner_3.setBounds(256, 167, 53, 20);
+		spinner_3.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
+		spinner_3.setBounds(310, 167, 54, 20);
 		contentPane.add(spinner_3);
-
+		
 		spinner_4 = new JSpinner();
-		spinner_4.setBounds(256, 227, 53, 20);
+		spinner_4.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
+		spinner_4.setBounds(310, 227, 54, 20);
 		contentPane.add(spinner_4);
-
+		
 		spinner_5 = new JSpinner();
-		spinner_5.setBounds(256, 287, 53, 20);
+		spinner_5.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
+		spinner_5.setBounds(310, 287, 54, 20);
 		contentPane.add(spinner_5);
-
+		
 		spinner_6 = new JSpinner();
-		spinner_6.setBounds(256, 312, 53, 20);
+		spinner_6.setModel(new SpinnerNumberModel(0.0, 0.0, 10.0, 1.0));
+		spinner_6.setBounds(310, 313, 54, 20);
 		contentPane.add(spinner_6);
-
+		
 		spinner_7 = new JSpinner();
-		spinner_7.setBounds(256, 337, 53, 20);
+		spinner_7.setModel(new SpinnerNumberModel(0.0, 0.0, 10.0, 1.0));
+		spinner_7.setBounds(310, 337, 54, 20);
 		contentPane.add(spinner_7);
-
+		
 		spinner_8 = new JSpinner();
-		spinner_8.setBounds(256, 362, 53, 20);
+		spinner_8.setModel(new SpinnerNumberModel(0.0, 0.0, 10.0, 1.0));
+		spinner_8.setBounds(310, 397, 54, 20);
 		contentPane.add(spinner_8);
-
+		
 		spinner_9 = new JSpinner();
-		spinner_9.setBounds(256, 422, 53, 20);
+		spinner_9.setModel(new SpinnerNumberModel(0.0, 0.0, 10.0, 1.0));
+		spinner_9.setBounds(310, 422, 54, 20);
 		contentPane.add(spinner_9);
-
+		
 		spinner_10 = new JSpinner();
-		spinner_10.setBounds(256, 447, 53, 20);
+		spinner_10.setModel(new SpinnerNumberModel(1.0, 1.0, 5.0, 1.0));
+		spinner_10.setBounds(721, 57, 54, 20);
 		contentPane.add(spinner_10);
-
+		
 		spinner_11 = new JSpinner();
-		spinner_11.setBounds(669, 57, 53, 20);
+		spinner_11.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
+		spinner_11.setBounds(721, 117, 54, 20);
 		contentPane.add(spinner_11);
-
+		
 		spinner_12 = new JSpinner();
-		spinner_12.setBounds(669, 82, 53, 20);
+		spinner_12.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
+		spinner_12.setBounds(721, 142, 54, 20);
 		contentPane.add(spinner_12);
-
+		
 		spinner_13 = new JSpinner();
-		spinner_13.setBounds(669, 107, 53, 20);
+		spinner_13.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
+		spinner_13.setBounds(721, 167, 54, 20);
 		contentPane.add(spinner_13);
-
+		
 		spinner_14 = new JSpinner();
-		spinner_14.setBounds(673, 167, 49, 20);
+		spinner_14.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
+		spinner_14.setBounds(721, 191, 54, 20);
 		contentPane.add(spinner_14);
-
+		
 		spinner_15 = new JSpinner();
-		spinner_15.setBounds(673, 192, 49, 20);
+		spinner_15.setModel(new SpinnerNumberModel(0.0, 0.0, 48.0, 1.0));
+		spinner_15.setBounds(725, 248, 54, 20);
 		contentPane.add(spinner_15);
-
-		spinner_16 = new JSpinner();
-		spinner_16.setBounds(673, 252, 49, 20);
-		contentPane.add(spinner_16);
-
-		spinner_17 = new JSpinner();
-		spinner_17.setBounds(673, 277, 49, 20);
-		contentPane.add(spinner_17);
-
-		spinner_18 = new JSpinner();
-		spinner_18.setModel(new SpinnerNumberModel(1, 1, 6, 1));
-		spinner_18.setBounds(673, 337, 49, 20);
-		contentPane.add(spinner_18);
 	}
 
 	/**
@@ -475,40 +459,39 @@ public class Main_Window_Testdata extends JFrame {
 	 */
 	private void getValues() {
 		
-		int foot = 0;
+		double foot = 0;
 		
-		values[0] = Integer.parseInt(spinner_0.getValue().toString());
-		values[1] = Integer.parseInt(spinner_1.getValue().toString());
-		values[2] = Integer.parseInt(spinner_2.getValue().toString());
-		values[3] = Integer.parseInt(spinner_3.getValue().toString());
-		values[4] = Integer.parseInt(spinner_4.getValue().toString());
-		values[5] = Integer.parseInt(spinner_5.getValue().toString());
-		values[6] = Integer.parseInt(spinner_6.getValue().toString());
-		values[7] = Integer.parseInt(spinner_7.getValue().toString());
-		values[8] = Integer.parseInt(spinner_8.getValue().toString());
-		values[9] = Integer.parseInt(spinner_9.getValue().toString());
-		values[10] = Integer.parseInt(spinner_10.getValue().toString());
-		values[11] = Integer.parseInt(spinner_11.getValue().toString());
-		values[12] = Integer.parseInt(spinner_12.getValue().toString());
-		values[13] = Integer.parseInt(spinner_13.getValue().toString());
-		values[14] = Integer.parseInt(spinner_14.getValue().toString());
-		values[15] = Integer.parseInt(spinner_15.getValue().toString());
-		values[16] = Integer.parseInt(spinner_16.getValue().toString());
-		values[17] = Integer.parseInt(spinner_17.getValue().toString());
-		values[18] = Integer.parseInt(spinner_18.getValue().toString());
-		
+		values[0] = (double) spinner_0.getValue();
+		values[1] = (double) spinner_1.getValue();
+		values[2] = (double) spinner_2.getValue();		
+		values[3] = (double) spinner_3.getValue();
+		values[4] = (double) spinner_4.getValue();
+		values[5] = (double) spinner_5.getValue();		
+		values[6] = (double) spinner_6.getValue();
+		values[7] = (double) spinner_7.getValue();
+		values[8] = (double) spinner_8.getValue();		
+		values[9] = (double) spinner_9.getValue();
+		values[10] = (double) spinner_10.getValue();
+		values[11] = (double) spinner_11.getValue();		
+		values[12] = (double) spinner_12.getValue();
+		values[13] = (double) spinner_13.getValue();
+		values[14] = (double) spinner_14.getValue();
+		values[15] = (double) spinner_15.getValue();		
+				
 		//linker Fuﬂ = 1, rechter Fuﬂ = 2; beidf¸ﬂig = 3
 		if(rdbtnEherLinks.isSelected()) {
-			foot = 1;
+			foot = 1.0;
 		} else if(rdbtnEherRechts.isSelected()) {
-			foot = 2;
+			foot = 2.0;
 		} else if(rdbtnBeidfig.isSelected()) {
-			foot = 3;
+			foot = 3.0;
 		}
-		values[19] = foot;
+		values[16] = foot;
+		
+		System.out.println(values[16]);
 		
 	}
-	public int[] deliverValues() {
+	public double[] deliverValues() {
 		return values;
 	}
 }

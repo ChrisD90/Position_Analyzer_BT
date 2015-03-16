@@ -3,9 +3,9 @@ package control;
 public class Analyzer_TestData {
 
 	//contains players values
-	int[] values;
+	double[] values;
 	
-	public Analyzer_TestData(int[] values) {
+	public Analyzer_TestData(double[] values) {
 		this.values = values;
 	}
 	

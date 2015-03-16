@@ -4,16 +4,16 @@ import control.Analyzer_TestData;
 
 public class Player {
 
-	int [] values;
+	double [] values;
 	public String positions;
 	
-	public Player(int[] values) {
-		this.values = values;
+	public Player(double[] values2) {
+		this.values = values2;
 	}
 	
-	public void printValues(int[] values) {
-		for(int i = 0; i<values.length+1; i++) {
-			System.out.println(values[i]);
+	public void printValues(double[] values2) {
+		for(int i = 0; i<values2.length+1; i++) {
+			System.out.println(values2[i]);
 		}
 	}
 	
