@@ -31,6 +31,8 @@ import javax.swing.Box;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 
+import control.Analyzer_TestData;
+
 public class Main_Window_Testdata extends JFrame {
 
 	/**
@@ -40,7 +42,7 @@ public class Main_Window_Testdata extends JFrame {
 
 	// GENERAL STUFF
 	private JPanel contentPane;
-	public double[] values = new double[17];
+	public double[] values = new double[18];
 
 	Player player;
 
@@ -78,6 +80,8 @@ public class Main_Window_Testdata extends JFrame {
 	private JSpinner spinner_13;
 	private JSpinner spinner_14;
 	private JSpinner spinner_15;
+	private JLabel lblSchussstrke;
+	private JSpinner spinner_16;
 	
 	/**
 	 * Create the frame.
@@ -110,6 +114,9 @@ public class Main_Window_Testdata extends JFrame {
 
 		initActionListeners(mntmClose, mntmCheatSheet, mntmAbout, btnSubmit,
 				btnBack);
+
+		
+		
 		
 	}
 
@@ -128,17 +135,17 @@ public class Main_Window_Testdata extends JFrame {
 
 		rdbtnEherLinks = new JRadioButton("eher links");
 		buttonGroup.add(rdbtnEherLinks);
-		rdbtnEherLinks.setBounds(423, 307, 109, 23);
+		rdbtnEherLinks.setBounds(419, 331, 109, 23);
 		contentPane.add(rdbtnEherLinks);
 
 		rdbtnEherRechts = new JRadioButton("eher rechts");
 		buttonGroup.add(rdbtnEherRechts);
-		rdbtnEherRechts.setBounds(534, 307, 109, 23);
+		rdbtnEherRechts.setBounds(530, 331, 109, 23);
 		contentPane.add(rdbtnEherRechts);
 
 		rdbtnBeidfig = new JRadioButton("beidf\u00FC\u00DFig");
 		buttonGroup.add(rdbtnBeidfig);
-		rdbtnBeidfig.setBounds(645, 307, 109, 23);
+		rdbtnBeidfig.setBounds(641, 331, 109, 23);
 		contentPane.add(rdbtnBeidfig);
 	}
 
@@ -283,7 +290,7 @@ public class Main_Window_Testdata extends JFrame {
 
 		JLabel lblFuarbeit = new JLabel("Fu\u00DFarbeit");
 		lblFuarbeit.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
-		lblFuarbeit.setBounds(423, 286, 236, 14);
+		lblFuarbeit.setBounds(419, 310, 236, 14);
 		contentPane.add(lblFuarbeit);
 		
 		JLabel lblPassKurz = new JLabel("Pass kurz - Zeit in sec");
@@ -297,6 +304,10 @@ public class Main_Window_Testdata extends JFrame {
 		JLabel lblmZeit_5 = new JLabel("60m - Zeit in 10/s");
 		lblmZeit_5.setBounds(419, 194, 220, 14);
 		contentPane.add(lblmZeit_5);
+		
+		lblSchussstrke = new JLabel("Schussst\u00E4rke");
+		lblSchussstrke.setBounds(423, 276, 299, 14);
+		contentPane.add(lblSchussstrke);
 	}
 
 	/**
@@ -382,6 +393,11 @@ public class Main_Window_Testdata extends JFrame {
 		spinner_15.setModel(new SpinnerNumberModel(0.0, 0.0, 48.0, 1.0));
 		spinner_15.setBounds(725, 248, 54, 20);
 		contentPane.add(spinner_15);
+		
+		spinner_16 = new JSpinner();
+		spinner_16.setModel(new SpinnerNumberModel(0.0, 0.0, 3.0, 1.0));
+		spinner_16.setBounds(725, 273, 54, 20);
+		contentPane.add(spinner_16);
 	}
 
 	/**
@@ -424,12 +440,10 @@ public class Main_Window_Testdata extends JFrame {
 
 				getValues();
 				
-				player = new Player(values);
-				player.printValues(values);
-				player.calcPos();
+				Analyzer_TestData atd = new Analyzer_TestData(values);
+				String string = atd.run();
+				System.out.println(string);
 
-				// String inhabits the calculated Positions
-				String string = player.positions;
 
 			}
 		});
@@ -476,7 +490,8 @@ public class Main_Window_Testdata extends JFrame {
 		values[12] = (double) spinner_12.getValue();
 		values[13] = (double) spinner_13.getValue();
 		values[14] = (double) spinner_14.getValue();
-		values[15] = (double) spinner_15.getValue();		
+		values[15] = (double) spinner_15.getValue();	
+		values[16] = (double) spinner_16.getValue();
 				
 		//linker Fuﬂ = 1, rechter Fuﬂ = 2; beidf¸ﬂig = 3
 		if(rdbtnEherLinks.isSelected()) {
@@ -486,7 +501,7 @@ public class Main_Window_Testdata extends JFrame {
 		} else if(rdbtnBeidfig.isSelected()) {
 			foot = 3.0;
 		}
-		values[16] = foot;
+		values[17] = foot;
 		
 		System.out.println(values[16]);
 		
