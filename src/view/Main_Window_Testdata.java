@@ -284,7 +284,7 @@ public class Main_Window_Testdata extends JFrame {
 		contentPane.add(lblSpielverstndnis);
 
 		JLabel lblEinschtzungAlsSchulnote = new JLabel(
-				"Einsch\u00E4tzung als Schulnote");
+				"Einsch\u00E4tzung");
 		lblEinschtzungAlsSchulnote.setBounds(419, 60, 236, 14);
 		contentPane.add(lblEinschtzungAlsSchulnote);
 
@@ -293,7 +293,7 @@ public class Main_Window_Testdata extends JFrame {
 		lblFuarbeit.setBounds(419, 310, 236, 14);
 		contentPane.add(lblFuarbeit);
 		
-		JLabel lblPassKurz = new JLabel("Pass kurz - Zeit in sec");
+		JLabel lblPassKurz = new JLabel("Pass kurz - total");
 		lblPassKurz.setBounds(10, 290, 236, 14);
 		contentPane.add(lblPassKurz);
 		
@@ -365,7 +365,7 @@ public class Main_Window_Testdata extends JFrame {
 		contentPane.add(spinner_9);
 		
 		spinner_10 = new JSpinner();
-		spinner_10.setModel(new SpinnerNumberModel(1.0, 1.0, 5.0, 1.0));
+		spinner_10.setModel(new SpinnerNumberModel(1.0, 1.0, 3.0, 1.0));
 		spinner_10.setBounds(721, 57, 54, 20);
 		contentPane.add(spinner_10);
 		
