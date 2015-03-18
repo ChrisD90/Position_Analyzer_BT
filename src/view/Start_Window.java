@@ -29,6 +29,7 @@ public class Start_Window extends JFrame {
 	 * Create the frame.
 	 */
 	public Start_Window() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Start_Window.class.getResource("/media/player.jpg")));
 		setResizable(false);
 		setTitle("Select Option");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

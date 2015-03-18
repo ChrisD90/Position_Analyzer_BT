@@ -26,12 +26,14 @@ public class Progress_Bar_Window extends JDialog {
 	JProgressBar progressBar;
 
 	int time;
-	
+	String string;
 	/**
 	 * Create the dialog.
 	 */
-	public Progress_Bar_Window(int time) {
+	public Progress_Bar_Window(int time, String string) {
 		this.time = time;
+		this.string = string;
+		
 		setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
 		setAlwaysOnTop(true);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(
@@ -59,6 +61,8 @@ public class Progress_Bar_Window extends JDialog {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				Result_Testdata_Window rtw = new Result_Testdata_Window(string);
+				rtw.setVisible(true);
 				dispose();
 			}
 		});

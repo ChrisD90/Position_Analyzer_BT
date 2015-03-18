@@ -113,11 +113,7 @@ public class Main_Window_Testdata extends JFrame {
 		initSpinners();
 
 		initActionListeners(mntmClose, mntmCheatSheet, mntmAbout, btnSubmit,
-				btnBack);
-
-		
-		
-		
+				btnBack);		
 	}
 
 	/**
@@ -432,19 +428,15 @@ public class Main_Window_Testdata extends JFrame {
 
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
-				Progress_Bar_Window dialog = new Progress_Bar_Window(25);
+				
+				getValues();
+				Analyzer_TestData atd = new Analyzer_TestData(values);
+				String string = atd.run();
+				
+				Progress_Bar_Window dialog = new Progress_Bar_Window(25, string);
 				dialog.setVisible(true);
 
 				System.out.println("Calculating Optimal Position");
-
-				getValues();
-				
-				Analyzer_TestData atd = new Analyzer_TestData(values);
-				String string = atd.run();
-				System.out.println(string);
-
-
 			}
 		});
 
