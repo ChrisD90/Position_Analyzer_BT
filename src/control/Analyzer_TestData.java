@@ -129,8 +129,24 @@ public class Analyzer_TestData {
 		int x = (int) values[5];
 		System.out.println("Kurze Pässe - total:		" + x);
 
-		if (values[5] >= 7) {
-			// TODO
+		if (x > 7) {
+			innenVerteidiger += 2;
+			aussenVerteidiger += 1;
+			zentralesMittelfeld += 3;
+			aeusresMittelfeld += 1;
+			stuermer += 1;
+		} else if(x > 3 && x >= 7) {
+			innenVerteidiger += 2;
+			aussenVerteidiger += 1;
+			zentralesMittelfeld += 2;
+			aeusresMittelfeld += 1;
+			stuermer += 1;
+		} else {
+			innenVerteidiger += 1;
+			aussenVerteidiger += 1;
+			zentralesMittelfeld += 1;
+			aeusresMittelfeld += 1;
+			stuermer += 1;
 		}
 	}
 
@@ -138,13 +154,13 @@ public class Analyzer_TestData {
 		int x = (int) values[6];
 		System.out.println("Weite Pässe - total:		" + x);
 
-		if (x >= 7) {
+		if (x > 7) {
 			innenVerteidiger += 1;
 			aussenVerteidiger += 2;
 			zentralesMittelfeld += 3;
 			aeusresMittelfeld += 2;
 			stuermer += 1;
-		} else if (x >= 3 && x < 7) {
+		} else if (x > 3 && x <= 7) {
 			innenVerteidiger += 1;
 			aussenVerteidiger += 2;
 			zentralesMittelfeld += 2;
@@ -163,13 +179,13 @@ public class Analyzer_TestData {
 		int x = (int) values[7];
 		System.out.println("Flanken - total:		" + x);
 
-		if (x >= 7) {
+		if (x > 7) {
 			innenVerteidiger += 1;
 			aussenVerteidiger += 2;
 			zentralesMittelfeld += 1;
 			aeusresMittelfeld += 3;
 			stuermer += 1;
-		} else if (x >= 3 && x < 7) {
+		} else if (x > 3 && x <= 7) {
 			innenVerteidiger += 1;
 			aussenVerteidiger += 2;
 			zentralesMittelfeld += 1;
@@ -190,13 +206,13 @@ public class Analyzer_TestData {
 		int x = (int) values[9];
 		System.out.println("Def. Zweikämpfe - gewonnen:	" + x);
 
-		if (x >= 7) {
+		if (x > 7) {
 			innenVerteidiger += 3;
 			aussenVerteidiger += 2;
 			zentralesMittelfeld += 1;
 			aeusresMittelfeld += 1;
 			stuermer += 1;
-		} else if (x >= 3 && x < 7) {
+		} else if (x > 3 && x <= 7) {
 			innenVerteidiger += 2;
 			aussenVerteidiger += 2;
 			zentralesMittelfeld += 1;
@@ -214,13 +230,13 @@ public class Analyzer_TestData {
 		int y = (int) values[8];
 		System.out.println("Off. Zweikämpfe - gewonnen:	" + y);
 
-		if (x >= 7) {
+		if (x > 7) {
 			innenVerteidiger += 1;
 			aussenVerteidiger += 2;
 			zentralesMittelfeld += 1;
 			aeusresMittelfeld += 2;
 			stuermer += 3;
-		} else if (x >= 3 && x < 7) {
+		} else if (x > 3 && x <= 7) {
 			innenVerteidiger += 1;
 			aussenVerteidiger += 2;
 			zentralesMittelfeld += 1;
@@ -296,13 +312,13 @@ public class Analyzer_TestData {
 
 		System.out.println("Torschuss - Treffer:		" + count);
 
-		if (count >= 33) {
+		if (count > 33) {
 			innenVerteidiger += 1;
 			aussenVerteidiger += 1;
 			zentralesMittelfeld += 2;
 			aeusresMittelfeld += 1;
 			stuermer += 3;
-		} else if (count > 21 && count < 33) {
+		} else if (count > 21 && count <= 33) {
 			innenVerteidiger += 1;
 			aussenVerteidiger += 1;
 			zentralesMittelfeld += 2;
