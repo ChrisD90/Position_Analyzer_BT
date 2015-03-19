@@ -131,16 +131,16 @@ public class Analyzer_TestData {
 
 		if (x > 7) {
 			innenVerteidiger += 2;
-			aussenVerteidiger += 1;
+			//aussenVerteidiger += 1;
 			zentralesMittelfeld += 3;
-			aeusresMittelfeld += 1;
-			stuermer += 1;
+			//aeusresMittelfeld += 1;
+			//stuermer += 1;
 		} else if(x > 3 && x >= 7) {
 			innenVerteidiger += 2;
-			aussenVerteidiger += 1;
+			//aussenVerteidiger += 1;
 			zentralesMittelfeld += 2;
-			aeusresMittelfeld += 1;
-			stuermer += 1;
+			//aeusresMittelfeld += 1;
+			//stuermer += 1;
 		} else {
 			innenVerteidiger += 1;
 			aussenVerteidiger += 1;
@@ -155,17 +155,17 @@ public class Analyzer_TestData {
 		System.out.println("Weite Pässe - total:		" + x);
 
 		if (x > 7) {
-			innenVerteidiger += 1;
+			//innenVerteidiger += 1;
 			aussenVerteidiger += 2;
 			zentralesMittelfeld += 3;
 			aeusresMittelfeld += 2;
-			stuermer += 1;
+			//stuermer += 1;
 		} else if (x > 3 && x <= 7) {
-			innenVerteidiger += 1;
+			//innenVerteidiger += 1;
 			aussenVerteidiger += 2;
 			zentralesMittelfeld += 2;
 			aeusresMittelfeld += 2;
-			stuermer += 1;
+			//stuermer += 1;
 		} else {
 			innenVerteidiger += 1;
 			aussenVerteidiger += 1;
@@ -180,17 +180,17 @@ public class Analyzer_TestData {
 		System.out.println("Flanken - total:		" + x);
 
 		if (x > 7) {
-			innenVerteidiger += 1;
+			//innenVerteidiger += 1;
 			aussenVerteidiger += 2;
-			zentralesMittelfeld += 1;
+			//zentralesMittelfeld += 1;
 			aeusresMittelfeld += 3;
-			stuermer += 1;
+			//stuermer += 1;
 		} else if (x > 3 && x <= 7) {
-			innenVerteidiger += 1;
+			//innenVerteidiger += 1;
 			aussenVerteidiger += 2;
-			zentralesMittelfeld += 1;
+			//zentralesMittelfeld += 1;
 			aeusresMittelfeld += 2;
-			stuermer += 1;
+			//stuermer += 1;
 		} else {
 			innenVerteidiger += 1;
 			aussenVerteidiger += 1;
@@ -209,15 +209,15 @@ public class Analyzer_TestData {
 		if (x > 7) {
 			innenVerteidiger += 3;
 			aussenVerteidiger += 2;
-			zentralesMittelfeld += 1;
-			aeusresMittelfeld += 1;
-			stuermer += 1;
+			//zentralesMittelfeld += 1;
+			//aeusresMittelfeld += 1;
+			//stuermer += 1;
 		} else if (x > 3 && x <= 7) {
 			innenVerteidiger += 2;
 			aussenVerteidiger += 2;
-			zentralesMittelfeld += 1;
-			aeusresMittelfeld += 1;
-			stuermer += 1;
+			//zentralesMittelfeld += 1;
+			//aeusresMittelfeld += 1;
+			//stuermer += 1;
 		} else {
 			innenVerteidiger += 1;
 			aussenVerteidiger += 1;
@@ -231,15 +231,15 @@ public class Analyzer_TestData {
 		System.out.println("Off. Zweikämpfe - gewonnen:	" + y);
 
 		if (x > 7) {
-			innenVerteidiger += 1;
+			//innenVerteidiger += 1;
 			aussenVerteidiger += 2;
-			zentralesMittelfeld += 1;
+			//zentralesMittelfeld += 1;
 			aeusresMittelfeld += 2;
 			stuermer += 3;
 		} else if (x > 3 && x <= 7) {
-			innenVerteidiger += 1;
+			//innenVerteidiger += 1;
 			aussenVerteidiger += 2;
-			zentralesMittelfeld += 1;
+			//zentralesMittelfeld += 1;
 			aeusresMittelfeld += 2;
 			stuermer += 2;
 		} else {
@@ -269,22 +269,22 @@ public class Analyzer_TestData {
 		switch (x) {
 		case 3:
 			innenVerteidiger += 2;
-			aussenVerteidiger += 1;
+			//aussenVerteidiger += 1;
 			zentralesMittelfeld += 3;
-			aeusresMittelfeld += 1;
-			stuermer += 1;
+			//aeusresMittelfeld += 1;
+			//stuermer += 1;
 		case 2:
 			innenVerteidiger += 2;
-			aussenVerteidiger += 1;
+			//aussenVerteidiger += 1;
 			zentralesMittelfeld += 2;
-			aeusresMittelfeld += 1;
-			stuermer += 1;
+			//aeusresMittelfeld += 1;
+			//stuermer += 1;
 		case 1:
 			innenVerteidiger += 2;
-			aussenVerteidiger += 1;
-			zentralesMittelfeld += 1;
-			aeusresMittelfeld += 1;
-			stuermer += 1;
+			//aussenVerteidiger += 1;
+			//zentralesMittelfeld += 1;
+			//aeusresMittelfeld += 1;
+			//stuermer += 1;
 		}
 	}
 
@@ -313,16 +313,16 @@ public class Analyzer_TestData {
 		System.out.println("Torschuss - Treffer:		" + count);
 
 		if (count > 33) {
-			innenVerteidiger += 1;
-			aussenVerteidiger += 1;
+			//innenVerteidiger += 1;
+			//aussenVerteidiger += 1;
 			zentralesMittelfeld += 2;
-			aeusresMittelfeld += 1;
+			//aeusresMittelfeld += 1;
 			stuermer += 3;
 		} else if (count > 21 && count <= 33) {
-			innenVerteidiger += 1;
-			aussenVerteidiger += 1;
+			//innenVerteidiger += 1;
+			//aussenVerteidiger += 1;
 			zentralesMittelfeld += 2;
-			aeusresMittelfeld += 1;
+			//aeusresMittelfeld += 1;
 			stuermer += 2;
 		} else {
 			innenVerteidiger += 1;
