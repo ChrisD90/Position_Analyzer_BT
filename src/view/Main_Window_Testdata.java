@@ -336,7 +336,7 @@ public class Main_Window_Testdata extends JFrame {
 		contentPane.add(spinner_4);
 		
 		spinner_5 = new JSpinner();
-		spinner_5.setModel(new SpinnerNumberModel(0.0, 0.0, 20.0, 1.0));
+		spinner_5.setModel(new SpinnerNumberModel(0.0, 0.0, 10.0, 1.0));
 		spinner_5.setBounds(310, 287, 54, 20);
 		contentPane.add(spinner_5);
 		
