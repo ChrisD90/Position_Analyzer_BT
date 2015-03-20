@@ -63,16 +63,35 @@ public class Analyzer_TestData {
 		double aeusresMittelfeld_Prozent = (aeusresMittelfeld * 100) / best;
 		double stuermer_Prozent = (stuermer * 100) / best;
 
-		string = "Ausgehend von den Testdaten eigenet sich dieser Spieler für die folgenden Positionen:\n\nInnenverteidiger: 	" + innenVerteidiger + " - "
-				+ innenVerteidiger_Prozent + "%" + "\nAußenverteidiger: 	"
-				+ aussenVerteidiger + " - " + aussenVerteidiger_Prozent + "%"
-				+ "\nzentrales Mittelfeld: 	" + zentralesMittelfeld + " - "
-				+ zentralesMittelfeld_Prozent + "%" + "\näußeres Mittelfeld: 	"
-				+ aeusresMittelfeld + " - " + aeusresMittelfeld_Prozent + "%"
-				+ "\nStürmer: 		" + stuermer + " - " + stuermer_Prozent + "%" +"\n\nAnmerkung: diese Werte sind Richtwerte und keine fixe Zuordnung!!";
+		string = "Ausgehend von den Testdaten eigenet sich dieser Spieler für die folgenden Positionen:\n\nInnenverteidiger: 	"
+				+ innenVerteidiger
+				+ " - "
+				+ innenVerteidiger_Prozent
+				+ "%"
+				+ "\nAußenverteidiger: 	"
+				+ aussenVerteidiger
+				+ " - "
+				+ aussenVerteidiger_Prozent
+				+ "%"
+				+ "\nzentrales Mittelfeld: 	"
+				+ zentralesMittelfeld
+				+ " - "
+				+ zentralesMittelfeld_Prozent
+				+ "%"
+				+ "\näußeres Mittelfeld: 	"
+				+ aeusresMittelfeld
+				+ " - "
+				+ aeusresMittelfeld_Prozent
+				+ "%"
+				+ "\nStürmer: 		"
+				+ stuermer
+				+ " - "
+				+ stuermer_Prozent
+				+ "%"
+				+ "\n\nAnmerkung: diese Werte sind Richtwerte und keine fixe Zuordnung!!";
 
 		System.out.println(string);
-		
+
 		return string;
 	}
 
@@ -131,16 +150,16 @@ public class Analyzer_TestData {
 
 		if (x > 7) {
 			innenVerteidiger += 2;
-			//aussenVerteidiger += 1;
+			// aussenVerteidiger += 1;
 			zentralesMittelfeld += 3;
-			//aeusresMittelfeld += 1;
-			//stuermer += 1;
-		} else if(x > 3 && x >= 7) {
+			// aeusresMittelfeld += 1;
+			// stuermer += 1;
+		} else if (x > 3 && x >= 7) {
 			innenVerteidiger += 2;
-			//aussenVerteidiger += 1;
+			// aussenVerteidiger += 1;
 			zentralesMittelfeld += 2;
-			//aeusresMittelfeld += 1;
-			//stuermer += 1;
+			// aeusresMittelfeld += 1;
+			// stuermer += 1;
 		} else {
 			innenVerteidiger += 1;
 			aussenVerteidiger += 1;
@@ -155,17 +174,17 @@ public class Analyzer_TestData {
 		System.out.println("Weite Pässe - total:		" + x);
 
 		if (x > 7) {
-			//innenVerteidiger += 1;
+			// innenVerteidiger += 1;
 			aussenVerteidiger += 2;
 			zentralesMittelfeld += 3;
 			aeusresMittelfeld += 2;
-			//stuermer += 1;
+			// stuermer += 1;
 		} else if (x > 3 && x <= 7) {
-			//innenVerteidiger += 1;
+			// innenVerteidiger += 1;
 			aussenVerteidiger += 2;
 			zentralesMittelfeld += 2;
 			aeusresMittelfeld += 2;
-			//stuermer += 1;
+			// stuermer += 1;
 		} else {
 			innenVerteidiger += 1;
 			aussenVerteidiger += 1;
@@ -180,17 +199,17 @@ public class Analyzer_TestData {
 		System.out.println("Flanken - total:		" + x);
 
 		if (x > 7) {
-			//innenVerteidiger += 1;
+			// innenVerteidiger += 1;
 			aussenVerteidiger += 2;
-			//zentralesMittelfeld += 1;
+			// zentralesMittelfeld += 1;
 			aeusresMittelfeld += 3;
-			//stuermer += 1;
+			// stuermer += 1;
 		} else if (x > 3 && x <= 7) {
-			//innenVerteidiger += 1;
+			// innenVerteidiger += 1;
 			aussenVerteidiger += 2;
-			//zentralesMittelfeld += 1;
+			// zentralesMittelfeld += 1;
 			aeusresMittelfeld += 2;
-			//stuermer += 1;
+			// stuermer += 1;
 		} else {
 			innenVerteidiger += 1;
 			aussenVerteidiger += 1;
@@ -201,23 +220,22 @@ public class Analyzer_TestData {
 	}
 
 	private void evalDuell() {
+		// Offensive
+		int y = (int) values[8];
+		System.out.println("Off. Zweikämpfe - gewonnen:	" + y);
 
-		// Defensive
-		int x = (int) values[9];
-		System.out.println("Def. Zweikämpfe - gewonnen:	" + x);
-
-		if (x > 7) {
-			innenVerteidiger += 3;
+		if (y > 7) {
+			// innenVerteidiger += 1;
 			aussenVerteidiger += 2;
-			//zentralesMittelfeld += 1;
-			//aeusresMittelfeld += 1;
-			//stuermer += 1;
-		} else if (x > 3 && x <= 7) {
-			innenVerteidiger += 2;
+			// zentralesMittelfeld += 1;
+			aeusresMittelfeld += 2;
+			stuermer += 3;
+		} else if (y > 3 && y <= 7) {
+			// innenVerteidiger += 1;
 			aussenVerteidiger += 2;
-			//zentralesMittelfeld += 1;
-			//aeusresMittelfeld += 1;
-			//stuermer += 1;
+			// zentralesMittelfeld += 1;
+			aeusresMittelfeld += 2;
+			stuermer += 2;
 		} else {
 			innenVerteidiger += 1;
 			aussenVerteidiger += 1;
@@ -226,22 +244,22 @@ public class Analyzer_TestData {
 			stuermer += 1;
 		}
 
-		// Offensive
-		int y = (int) values[8];
-		System.out.println("Off. Zweikämpfe - gewonnen:	" + y);
+		// Defensive
+		int x = (int) values[9];
+		System.out.println("Def. Zweikämpfe - gewonnen:	" + x);
 
 		if (x > 7) {
-			//innenVerteidiger += 1;
+			innenVerteidiger += 3;
 			aussenVerteidiger += 2;
-			//zentralesMittelfeld += 1;
-			aeusresMittelfeld += 2;
-			stuermer += 3;
+			// zentralesMittelfeld += 1;
+			// aeusresMittelfeld += 1;
+			// stuermer += 1;
 		} else if (x > 3 && x <= 7) {
-			//innenVerteidiger += 1;
+			innenVerteidiger += 2;
 			aussenVerteidiger += 2;
-			//zentralesMittelfeld += 1;
-			aeusresMittelfeld += 2;
-			stuermer += 2;
+			// zentralesMittelfeld += 1;
+			// aeusresMittelfeld += 1;
+			// stuermer += 1;
 		} else {
 			innenVerteidiger += 1;
 			aussenVerteidiger += 1;
@@ -269,60 +287,40 @@ public class Analyzer_TestData {
 		switch (x) {
 		case 3:
 			innenVerteidiger += 2;
-			//aussenVerteidiger += 1;
+			// aussenVerteidiger += 1;
 			zentralesMittelfeld += 3;
-			//aeusresMittelfeld += 1;
-			//stuermer += 1;
+			// aeusresMittelfeld += 1;
+			// stuermer += 1;
 		case 2:
 			innenVerteidiger += 2;
-			//aussenVerteidiger += 1;
+			// aussenVerteidiger += 1;
 			zentralesMittelfeld += 2;
-			//aeusresMittelfeld += 1;
-			//stuermer += 1;
+			// aeusresMittelfeld += 1;
+			// stuermer += 1;
 		case 1:
 			innenVerteidiger += 2;
-			//aussenVerteidiger += 1;
-			//zentralesMittelfeld += 1;
-			//aeusresMittelfeld += 1;
-			//stuermer += 1;
+			// aussenVerteidiger += 1;
+			// zentralesMittelfeld += 1;
+			// aeusresMittelfeld += 1;
+			// stuermer += 1;
 		}
 	}
 
 	private void evalBallQuali() {
-		double time5m = values[11];
-		double time10m = values[12];
-		double time30m = values[13];
-		double time60m = values[14];
+		int x = (int) values[11];
+		System.out.println("Punkte Dribbling:		" + x);
 
-		double time5to10m = time10m - time5m;
-		double time10to30m = time30m - time5to10m;
-		double time30to60m = time60m - time10to30m;
-
-		double time1m_Agility = (time5m + time10to30m) / 25;
-		double time1m_Dribbling = time5to10m / 5;
-		double time1m_WithBall = time30to60m / 30;
-
-		// TODO
-	}
-
-	private void evalSoohting() {
-		int count = (int) values[15];
-		int speed = (int) values[16];
-		int foot = (int) values[17];
-
-		System.out.println("Torschuss - Treffer:		" + count);
-
-		if (count > 33) {
-			//innenVerteidiger += 1;
-			//aussenVerteidiger += 1;
-			zentralesMittelfeld += 2;
-			//aeusresMittelfeld += 1;
+		if (x > 7) {
+			// innenVerteidiger += 1;
+			aussenVerteidiger += 2;
+			// zentralesMittelfeld += 1;
+			aeusresMittelfeld += 2;
 			stuermer += 3;
-		} else if (count > 21 && count <= 33) {
-			//innenVerteidiger += 1;
-			//aussenVerteidiger += 1;
-			zentralesMittelfeld += 2;
-			//aeusresMittelfeld += 1;
+		} else if (x > 3 && x <= 7) {
+			// innenVerteidiger += 1;
+			aussenVerteidiger += 2;
+			// zentralesMittelfeld += 1;
+			aeusresMittelfeld += 2;
 			stuermer += 2;
 		} else {
 			innenVerteidiger += 1;
@@ -331,8 +329,36 @@ public class Analyzer_TestData {
 			aeusresMittelfeld += 1;
 			stuermer += 1;
 		}
-		
-		if(foot == 3) {
+	}
+
+	private void evalSoohting() {
+		int count = (int) values[12];
+		int speed = (int) values[13];
+		int foot = (int) values[14];
+
+		System.out.println("Torschuss - Treffer:		" + count);
+
+		if (count > 33) {
+			// innenVerteidiger += 1;
+			// aussenVerteidiger += 1;
+			zentralesMittelfeld += 2;
+			// aeusresMittelfeld += 1;
+			stuermer += 3;
+		} else if (count > 21 && count <= 33) {
+			// innenVerteidiger += 1;
+			// aussenVerteidiger += 1;
+			zentralesMittelfeld += 2;
+			// aeusresMittelfeld += 1;
+			stuermer += 2;
+		} else {
+			innenVerteidiger += 1;
+			aussenVerteidiger += 1;
+			zentralesMittelfeld += 1;
+			aeusresMittelfeld += 1;
+			stuermer += 1;
+		}
+
+		if (foot == 3) {
 			stuermer += 1;
 		}
 	}

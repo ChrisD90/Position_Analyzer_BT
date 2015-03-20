@@ -42,7 +42,7 @@ public class Main_Window_Testdata extends JFrame {
 
 	// GENERAL STUFF
 	private JPanel contentPane;
-	public double[] values = new double[18];
+	public double[] values = new double[15];
 
 	Player player;
 
@@ -77,11 +77,8 @@ public class Main_Window_Testdata extends JFrame {
 	private JSpinner spinner_10;
 	private JSpinner spinner_11;
 	private JSpinner spinner_12;
-	private JSpinner spinner_13;
-	private JSpinner spinner_14;
-	private JSpinner spinner_15;
 	private JLabel lblSchussstrke;
-	private JSpinner spinner_16;
+	private JSpinner spinner_13;
 	
 	/**
 	 * Create the frame.
@@ -131,17 +128,17 @@ public class Main_Window_Testdata extends JFrame {
 
 		rdbtnEherLinks = new JRadioButton("eher links");
 		buttonGroup.add(rdbtnEherLinks);
-		rdbtnEherLinks.setBounds(419, 331, 109, 23);
+		rdbtnEherLinks.setBounds(424, 256, 109, 23);
 		contentPane.add(rdbtnEherLinks);
 
 		rdbtnEherRechts = new JRadioButton("eher rechts");
 		buttonGroup.add(rdbtnEherRechts);
-		rdbtnEherRechts.setBounds(530, 331, 109, 23);
+		rdbtnEherRechts.setBounds(535, 256, 109, 23);
 		contentPane.add(rdbtnEherRechts);
 
 		rdbtnBeidfig = new JRadioButton("beidf\u00FC\u00DFig");
 		buttonGroup.add(rdbtnBeidfig);
-		rdbtnBeidfig.setBounds(641, 331, 109, 23);
+		rdbtnBeidfig.setBounds(646, 256, 109, 23);
 		contentPane.add(rdbtnBeidfig);
 	}
 
@@ -184,15 +181,13 @@ public class Main_Window_Testdata extends JFrame {
 
 		JLabel lblAusdauerfhigkeiten = new JLabel("Ausdauerf\u00E4higkeiten");
 		lblAusdauerfhigkeiten.setToolTipText("");
-		lblAusdauerfhigkeiten.setFont(new Font("Arial",
-				Font.BOLD | Font.ITALIC, 13));
+		lblAusdauerfhigkeiten.setFont(new Font("Arial", Font.BOLD, 14));
 		lblAusdauerfhigkeiten.setBounds(10, 35, 236, 14);
 		contentPane.add(lblAusdauerfhigkeiten);
 
 		JLabel lblSchnelligkeitsfhigkeiten = new JLabel(
 				"Schnelligkeitsf\u00E4higkeiten");
-		lblSchnelligkeitsfhigkeiten.setFont(new Font("Arial", Font.BOLD
-				| Font.ITALIC, 13));
+		lblSchnelligkeitsfhigkeiten.setFont(new Font("Arial", Font.BOLD, 14));
 		lblSchnelligkeitsfhigkeiten.setBounds(10, 95, 299, 14);
 		contentPane.add(lblSchnelligkeitsfhigkeiten);
 
@@ -209,7 +204,7 @@ public class Main_Window_Testdata extends JFrame {
 		contentPane.add(lblmZeit_1);
 
 		JLabel lblSprungkraft = new JLabel("Sprungkraft");
-		lblSprungkraft.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
+		lblSprungkraft.setFont(new Font("Arial", Font.BOLD, 14));
 		lblSprungkraft.setBounds(10, 205, 236, 14);
 		contentPane.add(lblSprungkraft);
 
@@ -218,7 +213,7 @@ public class Main_Window_Testdata extends JFrame {
 		contentPane.add(lblErgebnisJump);
 
 		JLabel lblPassspiel = new JLabel("Passspiel/Flanken");
-		lblPassspiel.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
+		lblPassspiel.setFont(new Font("Arial", Font.BOLD, 14));
 		lblPassspiel.setBounds(10, 265, 236, 14);
 		contentPane.add(lblPassspiel);
 
@@ -231,35 +226,26 @@ public class Main_Window_Testdata extends JFrame {
 		contentPane.add(verticalStrut);
 
 		JLabel lblDribbling = new JLabel("Dribbling");
-		lblDribbling.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
-		lblDribbling.setBounds(419, 95, 236, 14);
+		lblDribbling.setFont(new Font("Arial", Font.BOLD, 14));
+		lblDribbling.setBounds(428, 95, 236, 14);
 		contentPane.add(lblDribbling);
 
-		JLabel lblmZeit_2 = new JLabel("5m - Zeit in 1/10s");
-		lblmZeit_2.setBounds(419, 119, 236, 14);
+		JLabel lblmZeit_2 = new JLabel("Punkte");
+		lblmZeit_2.setBounds(428, 120, 236, 14);
 		contentPane.add(lblmZeit_2);
 
-		JLabel lblmZeit_3 = new JLabel("10m - Zeit in 1/10s");
-		lblmZeit_3.setBounds(419, 144, 236, 14);
-		contentPane.add(lblmZeit_3);
-
-		JLabel lblmZeit_4 = new JLabel("30m - Zeit in 1/10s");
-		lblmZeit_4.setBounds(419, 169, 236, 14);
-		contentPane.add(lblmZeit_4);
-
 		JLabel lblTorschuss = new JLabel("Torschuss");
-		lblTorschuss.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
-		lblTorschuss.setBounds(423, 226, 236, 14);
+		lblTorschuss.setFont(new Font("Arial", Font.BOLD, 14));
+		lblTorschuss.setBounds(428, 155, 236, 14);
 		contentPane.add(lblTorschuss);
 
 		JLabel lblSchsseAufsTor_1 = new JLabel(
 				"Sch\u00FCsse aufs Tor - erfolgreich");
-		lblSchsseAufsTor_1.setBounds(423, 251, 236, 14);
+		lblSchsseAufsTor_1.setBounds(428, 180, 236, 14);
 		contentPane.add(lblSchsseAufsTor_1);
 
 		JLabel lblZweikampfverhalten = new JLabel("Zweikampfverhalten");
-		lblZweikampfverhalten.setFont(new Font("Arial",
-				Font.BOLD | Font.ITALIC, 13));
+		lblZweikampfverhalten.setFont(new Font("Arial", Font.BOLD, 14));
 		lblZweikampfverhalten.setBounds(10, 375, 236, 14);
 		contentPane.add(lblZweikampfverhalten);
 
@@ -274,19 +260,18 @@ public class Main_Window_Testdata extends JFrame {
 		contentPane.add(lblDefensiveZweikmpfe);
 
 		JLabel lblSpielverstndnis = new JLabel("Spielverst\u00E4ndnis");
-		lblSpielverstndnis.setFont(new Font("Arial", Font.BOLD | Font.ITALIC,
-				13));
-		lblSpielverstndnis.setBounds(419, 35, 237, 14);
+		lblSpielverstndnis.setFont(new Font("Arial", Font.BOLD, 14));
+		lblSpielverstndnis.setBounds(428, 35, 237, 14);
 		contentPane.add(lblSpielverstndnis);
 
 		JLabel lblEinschtzungAlsSchulnote = new JLabel(
 				"Einsch\u00E4tzung");
-		lblEinschtzungAlsSchulnote.setBounds(419, 60, 236, 14);
+		lblEinschtzungAlsSchulnote.setBounds(428, 60, 236, 14);
 		contentPane.add(lblEinschtzungAlsSchulnote);
 
 		JLabel lblFuarbeit = new JLabel("Fu\u00DFarbeit");
-		lblFuarbeit.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 13));
-		lblFuarbeit.setBounds(419, 310, 236, 14);
+		lblFuarbeit.setFont(new Font("Arial", Font.BOLD, 14));
+		lblFuarbeit.setBounds(428, 240, 236, 14);
 		contentPane.add(lblFuarbeit);
 		
 		JLabel lblPassKurz = new JLabel("Pass kurz - total");
@@ -297,12 +282,8 @@ public class Main_Window_Testdata extends JFrame {
 		lblPassWeit.setBounds(10, 316, 236, 14);
 		contentPane.add(lblPassWeit);
 		
-		JLabel lblmZeit_5 = new JLabel("60m - Zeit in 10/s");
-		lblmZeit_5.setBounds(419, 194, 220, 14);
-		contentPane.add(lblmZeit_5);
-		
 		lblSchussstrke = new JLabel("Schussst\u00E4rke");
-		lblSchussstrke.setBounds(423, 276, 299, 14);
+		lblSchussstrke.setBounds(428, 205, 299, 14);
 		contentPane.add(lblSchussstrke);
 	}
 
@@ -362,38 +343,23 @@ public class Main_Window_Testdata extends JFrame {
 		
 		spinner_10 = new JSpinner();
 		spinner_10.setModel(new SpinnerNumberModel(1.0, 1.0, 3.0, 1.0));
-		spinner_10.setBounds(721, 57, 54, 20);
+		spinner_10.setBounds(730, 57, 54, 20);
 		contentPane.add(spinner_10);
 		
 		spinner_11 = new JSpinner();
-		spinner_11.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
-		spinner_11.setBounds(721, 117, 54, 20);
+		spinner_11.setModel(new SpinnerNumberModel(0.0, 0.0, 10.0, 1.0));
+		spinner_11.setBounds(730, 117, 54, 20);
 		contentPane.add(spinner_11);
 		
 		spinner_12 = new JSpinner();
-		spinner_12.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
-		spinner_12.setBounds(721, 142, 54, 20);
+		spinner_12.setModel(new SpinnerNumberModel(0.0, 0.0, 48.0, 1.0));
+		spinner_12.setBounds(730, 177, 54, 20);
 		contentPane.add(spinner_12);
 		
 		spinner_13 = new JSpinner();
-		spinner_13.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
-		spinner_13.setBounds(721, 167, 54, 20);
+		spinner_13.setModel(new SpinnerNumberModel(0.0, 0.0, 3.0, 1.0));
+		spinner_13.setBounds(730, 201, 54, 20);
 		contentPane.add(spinner_13);
-		
-		spinner_14 = new JSpinner();
-		spinner_14.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
-		spinner_14.setBounds(721, 191, 54, 20);
-		contentPane.add(spinner_14);
-		
-		spinner_15 = new JSpinner();
-		spinner_15.setModel(new SpinnerNumberModel(0.0, 0.0, 48.0, 1.0));
-		spinner_15.setBounds(725, 248, 54, 20);
-		contentPane.add(spinner_15);
-		
-		spinner_16 = new JSpinner();
-		spinner_16.setModel(new SpinnerNumberModel(0.0, 0.0, 3.0, 1.0));
-		spinner_16.setBounds(725, 273, 54, 20);
-		contentPane.add(spinner_16);
 	}
 
 	/**
@@ -481,9 +447,6 @@ public class Main_Window_Testdata extends JFrame {
 		values[11] = (double) spinner_11.getValue();		
 		values[12] = (double) spinner_12.getValue();
 		values[13] = (double) spinner_13.getValue();
-		values[14] = (double) spinner_14.getValue();
-		values[15] = (double) spinner_15.getValue();	
-		values[16] = (double) spinner_16.getValue();
 				
 		//linker Fuﬂ = 1, rechter Fuﬂ = 2; beidf¸ﬂig = 3
 		if(rdbtnEherLinks.isSelected()) {
@@ -493,9 +456,9 @@ public class Main_Window_Testdata extends JFrame {
 		} else if(rdbtnBeidfig.isSelected()) {
 			foot = 3.0;
 		}
-		values[17] = foot;
+		values[14] = foot;
 		
-		System.out.println(values[16]);
+		System.out.println(values[14]);
 		
 	}
 	public double[] deliverValues() {
