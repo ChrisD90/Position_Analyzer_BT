@@ -49,19 +49,14 @@ public class Analyzer_TestData {
 		// Torschuss
 		evalSoohting();
 
-		int best = Math.max(
-				innenVerteidiger,
-				Math.max(
-						aussenVerteidiger,
-						Math.max(zentralesMittelfeld,
-								Math.max(aeusresMittelfeld, stuermer))));
-		System.out.println(best);
+		int sum = innenVerteidiger + aussenVerteidiger + zentralesMittelfeld + aeusresMittelfeld + stuermer;
+		System.out.println(sum);
 
-		double innenVerteidiger_Prozent = (innenVerteidiger * 100) / best;
-		double aussenVerteidiger_Prozent = (aussenVerteidiger * 100) / best;
-		double zentralesMittelfeld_Prozent = (zentralesMittelfeld * 100) / best;
-		double aeusresMittelfeld_Prozent = (aeusresMittelfeld * 100) / best;
-		double stuermer_Prozent = (stuermer * 100) / best;
+		double innenVerteidiger_Prozent = (innenVerteidiger * 100) / sum;
+		double aussenVerteidiger_Prozent = (aussenVerteidiger * 100) / sum;
+		double zentralesMittelfeld_Prozent = (zentralesMittelfeld * 100) / sum;
+		double aeusresMittelfeld_Prozent = (aeusresMittelfeld * 100) / sum;
+		double stuermer_Prozent = (stuermer * 100) / sum;
 
 		string = "Ausgehend von den Testdaten eigenet sich dieser Spieler für die folgenden Positionen:\n\nInnenverteidiger: 	"
 				+ innenVerteidiger
