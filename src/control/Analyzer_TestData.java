@@ -116,7 +116,7 @@ public class Analyzer_TestData {
 			stuermer += 2;
 		} else if (t_1mBeschl > t_1mAntritt && t_1mBeschl > t_1mGrundschn) {
 			innenVerteidiger += 2;
-			aussenVerteidiger += 2;
+			aussenVerteidiger += 3;
 			zentralesMittelfeld += 1;
 			aeusresMittelfeld += 3;
 			stuermer += 2;
@@ -328,7 +328,7 @@ public class Analyzer_TestData {
 
 	private void evalSoohting() {
 		int count = (int) values[12];
-		int speed = (int) values[13];
+		//int speed = (int) values[13];
 		int foot = (int) values[14];
 
 		System.out.println("Torschuss - Treffer:		" + count);
