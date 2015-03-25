@@ -333,13 +333,13 @@ public class Analyzer_TestData {
 
 		System.out.println("Torschuss - Treffer:		" + count);
 
-		if (count > 33) {
+		if (count > 5) {
 			// innenVerteidiger += 1;
 			// aussenVerteidiger += 1;
 			zentralesMittelfeld += 2;
 			// aeusresMittelfeld += 1;
 			stuermer += 3;
-		} else if (count > 21 && count <= 33) {
+		} else if (count > 2 && count <= 5) {
 			// innenVerteidiger += 1;
 			// aussenVerteidiger += 1;
 			zentralesMittelfeld += 2;
