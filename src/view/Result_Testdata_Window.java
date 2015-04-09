@@ -21,8 +21,7 @@ public class Result_Testdata_Window extends JFrame {
 	 * Create the frame.
 	 */
 	public Result_Testdata_Window(String string) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Result_Testdata_Window.class.getResource("/media/player.jpg")));
-		setTitle("Results...");
+		setTitle("Empfehlungen/Eignung");
 		
 		this.string = string;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

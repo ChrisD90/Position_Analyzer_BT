@@ -29,9 +29,8 @@ public class Start_Window extends JFrame {
 	 * Create the frame.
 	 */
 	public Start_Window() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Start_Window.class.getResource("/media/player.jpg")));
 		setResizable(false);
-		setTitle("Select Option");
+		setTitle("Analyse w\u00E4hlen...");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
@@ -62,13 +61,10 @@ public class Start_Window extends JFrame {
 		menuBar.setBounds(0, 0, 394, 31);
 		contentPane.add(menuBar);
 		
-		JMenu mnData = new JMenu("Data");
+		JMenu mnData = new JMenu("Datei");
 		menuBar.add(mnData);
-		
-		JMenuItem mntmHelp = new JMenuItem("Help");
-		mnData.add(mntmHelp);
-		
-		JMenuItem mntmClose = new JMenuItem("Close");
+				
+		JMenuItem mntmClose = new JMenuItem("Schlie\u00DFen");
 		mnData.add(mntmClose);
 		initActions(rdbtnTesdaten, rdbtnAnalyseAufGrund_1, btnOk, mntmClose);
 		

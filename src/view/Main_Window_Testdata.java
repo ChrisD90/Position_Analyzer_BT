@@ -51,8 +51,6 @@ public class Main_Window_Testdata extends JFrame {
 	private JMenu mnFile;
 	private JMenuItem mntmClose;
 	private JMenu mnHelp;
-	private JMenuItem mntmCheatSheet;
-	private JSeparator separator;
 	private JMenuItem mntmAbout;
 
 	// DIVERSE BUTTONS
@@ -85,8 +83,6 @@ public class Main_Window_Testdata extends JFrame {
 	 */
 	public Main_Window_Testdata() {
 		setBackground(Color.WHITE);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				Main_Window_Testdata.class.getResource("/media/player.jpg")));
 		setTitle("Analyse auf Grundlage von Testdaten...");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -108,21 +104,33 @@ public class Main_Window_Testdata extends JFrame {
 		initLabels();
 
 		initSpinners();
-
-		initActionListeners(mntmClose, mntmCheatSheet, mntmAbout, btnSubmit,
-				btnBack);		
 	}
 
 	/**
 	 * 
 	 */
 	private void initButtons() {
-		btnSubmit = new JButton("Submit");
+		btnSubmit = new JButton("Berechnen");
+		btnSubmit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				getValues();
+				Analyzer_TestData at = new Analyzer_TestData(values);
+				Progress_Bar_Window pbw = new Progress_Bar_Window(25, at.run());
+				pbw.setVisible(true);
+			}
+		});
 		btnSubmit.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnSubmit.setBounds(669, 511, 106, 37);
 		contentPane.add(btnSubmit);
 
-		btnBack = new JButton("Back");
+		btnBack = new JButton("Zur\u00FCck");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Start_Window sw = new Start_Window();
+				sw.setVisible(true);
+				dispose();
+			}
+		});
 		btnBack.setBounds(15, 515, 115, 29);
 		contentPane.add(btnBack);
 
@@ -150,23 +158,17 @@ public class Main_Window_Testdata extends JFrame {
 		menuBar.setBounds(0, 0, 794, 21);
 		contentPane.add(menuBar);
 
-		mnFile = new JMenu("File");
+		mnFile = new JMenu("Datei");
 		menuBar.add(mnFile);
 
-		mntmClose = new JMenuItem("Close");
+		mntmClose = new JMenuItem("Schlie\u00DFen");
 		mnFile.add(mntmClose);
 
-		mnHelp = new JMenu("Help");
+		mnHelp = new JMenu("Hilfe");
 		menuBar.add(mnHelp);
-
-		mntmCheatSheet = new JMenuItem("Cheat Sheet");
-		mnHelp.add(mntmCheatSheet);
-
-		separator = new JSeparator();
-		mnHelp.add(separator);
-
-		mntmAbout = new JMenuItem("About");
-		mnHelp.add(mntmAbout);
+		
+				mntmAbout = new JMenuItem("\u00DCber...");
+				mnHelp.add(mntmAbout);
 	}
 
 	/**
@@ -403,16 +405,6 @@ public class Main_Window_Testdata extends JFrame {
 				dialog.setVisible(true);
 
 				System.out.println("Calculating Optimal Position");
-			}
-		});
-
-		mntmCheatSheet.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				Help_Window hw = new Help_Window();
-				hw.setVisible(true);
-
 			}
 		});
 

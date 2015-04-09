@@ -36,8 +36,6 @@ public class Progress_Bar_Window extends JDialog {
 		
 		setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
 		setAlwaysOnTop(true);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				Progress_Bar_Window.class.getResource("/media/player.jpg")));
 
 		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 		int x = dimension.width;
