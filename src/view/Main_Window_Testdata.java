@@ -1,35 +1,26 @@
 package view;
 
 import java.awt.Color;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JSpinner;
-import javax.swing.SpinnerNumberModel;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
-import model.Player;
-
-import java.awt.Toolkit;
-
-import javax.swing.JSeparator;
-
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Component;
-import java.awt.Window;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.Box;
-import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.border.EmptyBorder;
 
 import control.Analyzer_TestData;
 
@@ -40,17 +31,16 @@ public class Main_Window_Testdata extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Analyzer_TestData atd;
-	private Progress_Bar_Window dialog;
 	private Help_Window hw;
 	private Start_Window sw;
 	private Progress_Bar_Window pbw;
 	private Analyzer_TestData at;
+	private About_Window aw;
+	
 	// GENERAL STUFF
 	private JPanel contentPane;
 	public double[] values = new double[15];
 
-	Player player;
 
 	// MENU
 	private JMenuBar menuBar;
@@ -403,7 +393,7 @@ public class Main_Window_Testdata extends JFrame {
 		});
 		mntmAbout.addActionListener(new ActionListener() {
 
-			private About_Window aw;
+			
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
