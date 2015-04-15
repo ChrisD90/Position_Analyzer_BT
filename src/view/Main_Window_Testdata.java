@@ -77,6 +77,8 @@ public class Main_Window_Testdata extends JFrame {
 	private JSpinner spinner_12;
 	private JLabel lblSchussstrke;
 	private JSpinner spinner_13;
+
+	private JMenuItem mntmHilfe;
 	
 	/**
 	 * Create the frame.
@@ -104,6 +106,8 @@ public class Main_Window_Testdata extends JFrame {
 		initLabels();
 
 		initSpinners();
+		
+		initActionListeners(mntmClose, mntmAbout, mntmHilfe, btnSubmit, btnBack);
 	}
 
 	/**
@@ -166,6 +170,9 @@ public class Main_Window_Testdata extends JFrame {
 
 		mnHelp = new JMenu("Hilfe");
 		menuBar.add(mnHelp);
+				
+				mntmHilfe = new JMenuItem("Hilfe");
+				mnHelp.add(mntmHilfe);
 		
 				mntmAbout = new JMenuItem("\u00DCber...");
 				mnHelp.add(mntmAbout);
@@ -372,7 +379,7 @@ public class Main_Window_Testdata extends JFrame {
 	 * @param btnBack
 	 */
 	private void initActionListeners(JMenuItem mntmClose,
-			JMenuItem mntmCheatSheet, JMenuItem mntmAbout, JButton btnSubmit,
+			JMenuItem mntmAbout,JMenuItem mntmHilfe, JButton btnSubmit,
 			JButton btnBack) {
 		btnBack.addActionListener(new ActionListener() {
 
@@ -384,6 +391,15 @@ public class Main_Window_Testdata extends JFrame {
 			}
 		});
 
+		mntmHilfe.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Help_Window hw = new Help_Window();
+				hw.setVisible(true);
+				
+			}
+		});
 		mntmAbout.addActionListener(new ActionListener() {
 
 			@Override

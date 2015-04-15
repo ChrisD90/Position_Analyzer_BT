@@ -98,6 +98,10 @@ public class Analyzer_TestData {
 
 	}
 
+	/**
+	 * evaluates the speed capabilities by
+	 * comparing them to each other
+	 */
 	private void evalSpeed() {
 		// Zeit der Abschnitte auf 1m
 		double t_1mAntritt = values[1] / 5;
@@ -129,6 +133,9 @@ public class Analyzer_TestData {
 		}
 	}
 
+	/**
+	 * not integrated yet
+	 */
 	private void evalJump() {
 		double x = values[4];
 
@@ -139,6 +146,9 @@ public class Analyzer_TestData {
 		}
 	}
 
+	/**
+	 * evaluates the test values
+	 */
 	private void evalPassesShort() {
 		int x = (int) values[5];
 		System.out.println("Kurze Pässe - total:		" + x);
@@ -164,6 +174,11 @@ public class Analyzer_TestData {
 		}
 	}
 
+	/**
+	 * the more long passes are complete the more you
+	 * can assigne a player to the position of the
+	 * cantral midfielders
+	 */
 	private void evalPassesLong() {
 		int x = (int) values[6];
 		System.out.println("Weite Pässe - total:		" + x);
@@ -189,6 +204,10 @@ public class Analyzer_TestData {
 		}
 	}
 
+	/**
+	 *  used by external midfielders
+	 * and external defenders
+	 */
 	private void evalFlanks() {
 		int x = (int) values[7];
 		System.out.println("Flanken - total:		" + x);
@@ -214,6 +233,10 @@ public class Analyzer_TestData {
 		}
 	}
 
+	/**
+	 * makes the diffrence between offensiv
+	 * and defesinv players
+	 */
 	private void evalDuell() {
 		// Offensive
 		int y = (int) values[8];
@@ -275,6 +298,10 @@ public class Analyzer_TestData {
 		}
 	}
 
+	/**
+	 * central midfielders and central defenders
+	 * need very good skills
+	 */
 	private void evalTactics() {
 		int x = (int) values[10];
 		System.out.println("Spielverständnis:		" + x);
@@ -301,6 +328,9 @@ public class Analyzer_TestData {
 		}
 	}
 
+	/**
+	 * important for forwards and external players
+	 */
 	private void evalBallQuali() {
 		int x = (int) values[11];
 		System.out.println("Punkte Dribbling:		" + x);
@@ -326,6 +356,9 @@ public class Analyzer_TestData {
 		}
 	}
 
+	/**
+	 * forwards and central midfielders
+	 */
 	private void evalSoohting() {
 		int count = (int) values[12];
 		//int speed = (int) values[13];

@@ -49,6 +49,7 @@ public class Start_Window extends JFrame {
 		contentPane.add(rdbtnTesdaten);
 		
 		JRadioButton rdbtnAnalyseAufGrund_1 = new JRadioButton("Analyse auf Grund von Spielbeobachtungsdaten");
+		rdbtnAnalyseAufGrund_1.setEnabled(false);
 		buttonGroup.add(rdbtnAnalyseAufGrund_1);
 		rdbtnAnalyseAufGrund_1.setBounds(11, 131, 372, 29);
 		contentPane.add(rdbtnAnalyseAufGrund_1);
@@ -88,10 +89,6 @@ public class Start_Window extends JFrame {
 				if(rdbtnTesdaten.isSelected()) {
 					Main_Window_Testdata mw = new Main_Window_Testdata();
 					mw.setVisible(true);
-					dispose();
-				} else if(rdbtnAnalyseAufGrund_1.isSelected()) {
-					Main_Window_Spielbeobachtung mws = new Main_Window_Spielbeobachtung();
-					mws.setVisible(true);
 					dispose();
 				}
 				
