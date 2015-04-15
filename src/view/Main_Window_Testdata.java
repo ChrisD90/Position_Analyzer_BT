@@ -40,6 +40,12 @@ public class Main_Window_Testdata extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	private Analyzer_TestData atd;
+	private Progress_Bar_Window dialog;
+	private Help_Window hw;
+	private Start_Window sw;
+	private Progress_Bar_Window pbw;
+	private Analyzer_TestData at;
 	// GENERAL STUFF
 	private JPanel contentPane;
 	public double[] values = new double[15];
@@ -61,7 +67,7 @@ public class Main_Window_Testdata extends JFrame {
 	private JRadioButton rdbtnEherRechts;
 	private JRadioButton rdbtnBeidfig;
 
-	//SPINNERS
+	// SPINNERS
 	private JSpinner spinner_0;
 	private JSpinner spinner_1;
 	private JSpinner spinner_2;
@@ -79,7 +85,7 @@ public class Main_Window_Testdata extends JFrame {
 	private JSpinner spinner_13;
 
 	private JMenuItem mntmHilfe;
-	
+
 	/**
 	 * Create the frame.
 	 */
@@ -92,8 +98,8 @@ public class Main_Window_Testdata extends JFrame {
 		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 		int x = dimension.width;
 		int y = dimension.height;
-		setBounds(((x-800)/2), ((y-600)/2), 800, 600);
-		
+		setBounds(((x - 800) / 2), ((y - 600) / 2), 800, 600);
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -106,7 +112,7 @@ public class Main_Window_Testdata extends JFrame {
 		initLabels();
 
 		initSpinners();
-		
+
 		initActionListeners(mntmClose, mntmAbout, mntmHilfe, btnSubmit, btnBack);
 	}
 
@@ -115,14 +121,7 @@ public class Main_Window_Testdata extends JFrame {
 	 */
 	private void initButtons() {
 		btnSubmit = new JButton("Berechnen");
-		btnSubmit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				getValues();
-				Analyzer_TestData at = new Analyzer_TestData(values);
-				Progress_Bar_Window pbw = new Progress_Bar_Window(25, at.run());
-				pbw.setVisible(true);
-			}
-		});
+
 		btnSubmit.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnSubmit.setBounds(669, 511, 106, 37);
 		contentPane.add(btnSubmit);
@@ -130,7 +129,6 @@ public class Main_Window_Testdata extends JFrame {
 		btnBack = new JButton("Zur\u00FCck");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Start_Window sw = new Start_Window();
 				sw.setVisible(true);
 				dispose();
 			}
@@ -170,12 +168,12 @@ public class Main_Window_Testdata extends JFrame {
 
 		mnHelp = new JMenu("Hilfe");
 		menuBar.add(mnHelp);
-				
-				mntmHilfe = new JMenuItem("Hilfe");
-				mnHelp.add(mntmHilfe);
-		
-				mntmAbout = new JMenuItem("\u00DCber...");
-				mnHelp.add(mntmAbout);
+
+		mntmHilfe = new JMenuItem("Hilfe");
+		mnHelp.add(mntmHilfe);
+
+		mntmAbout = new JMenuItem("\u00DCber...");
+		mnHelp.add(mntmAbout);
 	}
 
 	/**
@@ -273,8 +271,7 @@ public class Main_Window_Testdata extends JFrame {
 		lblSpielverstndnis.setBounds(428, 35, 237, 14);
 		contentPane.add(lblSpielverstndnis);
 
-		JLabel lblEinschtzungAlsSchulnote = new JLabel(
-				"Einsch\u00E4tzung");
+		JLabel lblEinschtzungAlsSchulnote = new JLabel("Einsch\u00E4tzung");
 		lblEinschtzungAlsSchulnote.setBounds(428, 60, 236, 14);
 		contentPane.add(lblEinschtzungAlsSchulnote);
 
@@ -282,15 +279,15 @@ public class Main_Window_Testdata extends JFrame {
 		lblFuarbeit.setFont(new Font("Arial", Font.BOLD, 14));
 		lblFuarbeit.setBounds(428, 240, 236, 14);
 		contentPane.add(lblFuarbeit);
-		
+
 		JLabel lblPassKurz = new JLabel("Pass kurz - total");
 		lblPassKurz.setBounds(10, 290, 236, 14);
 		contentPane.add(lblPassKurz);
-		
+
 		JLabel lblPassWeit = new JLabel("Pass weit - erflogreich");
 		lblPassWeit.setBounds(10, 316, 236, 14);
 		contentPane.add(lblPassWeit);
-		
+
 		lblSchussstrke = new JLabel("Schussst\u00E4rke");
 		lblSchussstrke.setBounds(428, 205, 299, 14);
 		contentPane.add(lblSchussstrke);
@@ -301,70 +298,75 @@ public class Main_Window_Testdata extends JFrame {
 	 */
 	private void initSpinners() {
 		spinner_0 = new JSpinner();
-		spinner_0.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
+		spinner_0.setModel(new SpinnerNumberModel(new Double(0), null, null,
+				new Double(1)));
 		spinner_0.setBounds(310, 57, 54, 20);
 		contentPane.add(spinner_0);
-		
+
 		spinner_1 = new JSpinner();
-		spinner_1.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
+		spinner_1.setModel(new SpinnerNumberModel(new Double(0), null, null,
+				new Double(1)));
 		spinner_1.setBounds(310, 117, 54, 20);
 		contentPane.add(spinner_1);
-		
+
 		spinner_2 = new JSpinner();
-		spinner_2.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
+		spinner_2.setModel(new SpinnerNumberModel(new Double(0), null, null,
+				new Double(1)));
 		spinner_2.setBounds(310, 142, 54, 20);
 		contentPane.add(spinner_2);
-		
+
 		spinner_3 = new JSpinner();
-		spinner_3.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
+		spinner_3.setModel(new SpinnerNumberModel(new Double(0), null, null,
+				new Double(1)));
 		spinner_3.setBounds(310, 167, 54, 20);
 		contentPane.add(spinner_3);
-		
+
 		spinner_4 = new JSpinner();
-		spinner_4.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
+		spinner_4.setModel(new SpinnerNumberModel(new Double(0), null, null,
+				new Double(1)));
 		spinner_4.setBounds(310, 227, 54, 20);
 		contentPane.add(spinner_4);
-		
+
 		spinner_5 = new JSpinner();
 		spinner_5.setModel(new SpinnerNumberModel(0.0, 0.0, 10.0, 1.0));
 		spinner_5.setBounds(310, 287, 54, 20);
 		contentPane.add(spinner_5);
-		
+
 		spinner_6 = new JSpinner();
 		spinner_6.setModel(new SpinnerNumberModel(0.0, 0.0, 10.0, 1.0));
 		spinner_6.setBounds(310, 313, 54, 20);
 		contentPane.add(spinner_6);
-		
+
 		spinner_7 = new JSpinner();
 		spinner_7.setModel(new SpinnerNumberModel(0.0, 0.0, 10.0, 1.0));
 		spinner_7.setBounds(310, 337, 54, 20);
 		contentPane.add(spinner_7);
-		
+
 		spinner_8 = new JSpinner();
 		spinner_8.setModel(new SpinnerNumberModel(0.0, 0.0, 10.0, 1.0));
 		spinner_8.setBounds(310, 397, 54, 20);
 		contentPane.add(spinner_8);
-		
+
 		spinner_9 = new JSpinner();
 		spinner_9.setModel(new SpinnerNumberModel(0.0, 0.0, 10.0, 1.0));
 		spinner_9.setBounds(310, 422, 54, 20);
 		contentPane.add(spinner_9);
-		
+
 		spinner_10 = new JSpinner();
 		spinner_10.setModel(new SpinnerNumberModel(1.0, 1.0, 3.0, 1.0));
 		spinner_10.setBounds(730, 57, 54, 20);
 		contentPane.add(spinner_10);
-		
+
 		spinner_11 = new JSpinner();
 		spinner_11.setModel(new SpinnerNumberModel(0.0, 0.0, 10.0, 1.0));
 		spinner_11.setBounds(730, 117, 54, 20);
 		contentPane.add(spinner_11);
-		
+
 		spinner_12 = new JSpinner();
 		spinner_12.setModel(new SpinnerNumberModel(0.0, 0.0, 48.0, 1.0));
 		spinner_12.setBounds(730, 177, 54, 20);
 		contentPane.add(spinner_12);
-		
+
 		spinner_13 = new JSpinner();
 		spinner_13.setModel(new SpinnerNumberModel(0.0, 0.0, 3.0, 1.0));
 		spinner_13.setBounds(730, 201, 54, 20);
@@ -378,49 +380,46 @@ public class Main_Window_Testdata extends JFrame {
 	 * @param btnSubmit
 	 * @param btnBack
 	 */
-	private void initActionListeners(JMenuItem mntmClose,
-			JMenuItem mntmAbout,JMenuItem mntmHilfe, JButton btnSubmit,
-			JButton btnBack) {
+	private void initActionListeners(JMenuItem mntmClose, JMenuItem mntmAbout,
+			JMenuItem mntmHilfe, JButton btnSubmit, JButton btnBack) {
 		btnBack.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Start_Window sw = new Start_Window();
+				sw = new Start_Window();
 				sw.setVisible(true);
 				dispose();
 			}
 		});
 
 		mntmHilfe.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Help_Window hw = new Help_Window();
+				hw = new Help_Window();
 				hw.setVisible(true);
-				
+
 			}
 		});
 		mntmAbout.addActionListener(new ActionListener() {
 
+			private About_Window aw;
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				About_Window aw = new About_Window();
+				aw = new About_Window();
 				aw.setVisible(true);
 
 			}
 		});
 
 		btnSubmit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				getValues();
-				Analyzer_TestData atd = new Analyzer_TestData(values);
-				String string = atd.run();
-				
-				Progress_Bar_Window dialog = new Progress_Bar_Window(25, string);
-				dialog.setVisible(true);
 
-				System.out.println("Calculating Optimal Position");
+			public void actionPerformed(ActionEvent e) {
+				getValues();
+				at = new Analyzer_TestData(values);
+				pbw = new Progress_Bar_Window(25, at.run());
+				pbw.setVisible(true);
 			}
 		});
 
@@ -438,37 +437,38 @@ public class Main_Window_Testdata extends JFrame {
 	 * fills the blank array with the values from the spinners
 	 */
 	private void getValues() {
-		
+
 		double foot = 0;
-		
+
 		values[0] = (double) spinner_0.getValue();
 		values[1] = (double) spinner_1.getValue();
-		values[2] = (double) spinner_2.getValue();		
+		values[2] = (double) spinner_2.getValue();
 		values[3] = (double) spinner_3.getValue();
 		values[4] = (double) spinner_4.getValue();
-		values[5] = (double) spinner_5.getValue();		
+		values[5] = (double) spinner_5.getValue();
 		values[6] = (double) spinner_6.getValue();
 		values[7] = (double) spinner_7.getValue();
-		values[8] = (double) spinner_8.getValue();		
+		values[8] = (double) spinner_8.getValue();
 		values[9] = (double) spinner_9.getValue();
 		values[10] = (double) spinner_10.getValue();
-		values[11] = (double) spinner_11.getValue();		
+		values[11] = (double) spinner_11.getValue();
 		values[12] = (double) spinner_12.getValue();
 		values[13] = (double) spinner_13.getValue();
-				
-		//linker Fuﬂ = 1, rechter Fuﬂ = 2; beidf¸ﬂig = 3
-		if(rdbtnEherLinks.isSelected()) {
+
+		// linker Fuﬂ = 1, rechter Fuﬂ = 2; beidf¸ﬂig = 3
+		if (rdbtnEherLinks.isSelected()) {
 			foot = 1.0;
-		} else if(rdbtnEherRechts.isSelected()) {
+		} else if (rdbtnEherRechts.isSelected()) {
 			foot = 2.0;
-		} else if(rdbtnBeidfig.isSelected()) {
+		} else if (rdbtnBeidfig.isSelected()) {
 			foot = 3.0;
 		}
 		values[14] = foot;
-		
+
 		System.out.println(values[14]);
-		
+
 	}
+
 	public double[] deliverValues() {
 		return values;
 	}

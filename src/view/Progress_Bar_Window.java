@@ -24,7 +24,7 @@ public class Progress_Bar_Window extends JDialog {
 	 */
 	private static final long serialVersionUID = 1L;
 	JProgressBar progressBar;
-
+	private Result_Testdata_Window rtw;
 	int time;
 	String string;
 	/**
@@ -57,9 +57,11 @@ public class Progress_Bar_Window extends JDialog {
 
 		okButton.addActionListener(new ActionListener() {
 
+			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Result_Testdata_Window rtw = new Result_Testdata_Window(string);
+				rtw = new Result_Testdata_Window(string);
 				rtw.setVisible(true);
 				dispose();
 			}

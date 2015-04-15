@@ -24,7 +24,7 @@ public class Start_Window extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
-
+	private Main_Window_Testdata mw;
 	/**
 	 * Create the frame.
 	 */
@@ -84,10 +84,12 @@ public class Start_Window extends JFrame {
 		
 		btnOk.addActionListener(new ActionListener() {
 			
+			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnTesdaten.isSelected()) {
-					Main_Window_Testdata mw = new Main_Window_Testdata();
+					mw = new Main_Window_Testdata();
 					mw.setVisible(true);
 					dispose();
 				}
