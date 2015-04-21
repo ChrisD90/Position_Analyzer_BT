@@ -171,12 +171,14 @@ public class Main_Window_Testdata extends JFrame {
 	 */
 	private void initLabels() {
 		JLabel lblAusdauer = new JLabel("Ergebnis - Yo-Yo Test (in m)");
+		lblAusdauer.setEnabled(false);
 		lblAusdauer
 				.setToolTipText("Der Yo-Yo Test zeigt nach Di Salvo et al. (2006) eine enge Korrelation \r\nzwischen der zur\u00FCckgelegten Distanz im Test und der Positionsrolle \r\ndes Spielers.");
 		lblAusdauer.setBounds(10, 60, 236, 14);
 		contentPane.add(lblAusdauer);
 
 		JLabel lblAusdauerfhigkeiten = new JLabel("Ausdauerf\u00E4higkeiten");
+		lblAusdauerfhigkeiten.setEnabled(false);
 		lblAusdauerfhigkeiten.setToolTipText("");
 		lblAusdauerfhigkeiten.setFont(new Font("Arial", Font.BOLD, 14));
 		lblAusdauerfhigkeiten.setBounds(10, 35, 236, 14);
@@ -201,11 +203,13 @@ public class Main_Window_Testdata extends JFrame {
 		contentPane.add(lblmZeit_1);
 
 		JLabel lblSprungkraft = new JLabel("Sprungkraft");
+		lblSprungkraft.setEnabled(false);
 		lblSprungkraft.setFont(new Font("Arial", Font.BOLD, 14));
 		lblSprungkraft.setBounds(10, 205, 236, 14);
 		contentPane.add(lblSprungkraft);
 
 		JLabel lblErgebnisJump = new JLabel("Ergebnis - Jump & Reach (in cm)");
+		lblErgebnisJump.setEnabled(false);
 		lblErgebnisJump.setBounds(10, 230, 236, 14);
 		contentPane.add(lblErgebnisJump);
 
@@ -288,6 +292,7 @@ public class Main_Window_Testdata extends JFrame {
 	 */
 	private void initSpinners() {
 		spinner_0 = new JSpinner();
+		spinner_0.setEnabled(false);
 		spinner_0.setModel(new SpinnerNumberModel(new Double(0), null, null,
 				new Double(1)));
 		spinner_0.setBounds(310, 57, 54, 20);
@@ -312,6 +317,7 @@ public class Main_Window_Testdata extends JFrame {
 		contentPane.add(spinner_3);
 
 		spinner_4 = new JSpinner();
+		spinner_4.setEnabled(false);
 		spinner_4.setModel(new SpinnerNumberModel(new Double(0), null, null,
 				new Double(1)));
 		spinner_4.setBounds(310, 227, 54, 20);
